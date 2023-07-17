@@ -1,0 +1,7 @@
+# Both
+**/node_modules
+
+# Backend
+backend/.env
+
+# Frontend
