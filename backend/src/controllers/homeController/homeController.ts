@@ -13,9 +13,7 @@ export default class HomeController {
 
   getById = (req: Request, res: Response) => {
     axios
-      .get(
-        "https://hacker-news.firebaseio.com/v0/item/" + req.params.id + ".json"
-      )
+      .get(`https://hacker-news.firebaseio.com/v0/item/${req.params.id}.json`)
       .then((response: AxiosResponse) => {
         console.log("GET Item by Id");
         res.status(200).send(response.data);
