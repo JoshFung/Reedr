@@ -9,5 +9,6 @@ const homeController_1 = __importDefault(require("../controllers/homeController/
 const router = express_1.default.Router();
 exports.homeRouter = router;
 const homeController = new homeController_1.default();
-router.get("/", homeController.getTop500);
+router.get("/Top500Ids", homeController.getTop500Ids);
+router.get("/item/:id", homeController.getById);
 //# sourceMappingURL=home.js.map
