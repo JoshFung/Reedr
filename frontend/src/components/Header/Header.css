@@ -1,0 +1,13 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+}
+
+.headerLogo {
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+.headerLink {
+  display: inline-block;
+}
