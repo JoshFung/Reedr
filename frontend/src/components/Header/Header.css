@@ -1,0 +1,16 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+}
+
+.headerLogo {
+  margin: 0;
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+.headerLink {
+  display: inline-block;
+}
