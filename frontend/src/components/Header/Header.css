@@ -3,14 +3,24 @@
   align-items: center;
   width: 100vw;
   height: 10vh;
+  border-bottom: 1px inset #ced4da;
 }
 
 .headerLogo {
-  margin: 0;
+  margin: 0 0.25em 0 0.25em;
   font-weight: 900;
   font-size: 3rem;
 }
 
+.headerLinkList {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-left: auto;
+  margin-right: 1.25em;
+}
+
 .headerLink {
   display: inline-block;
+  margin: 0 0.5em 0 0.5em;
 }
