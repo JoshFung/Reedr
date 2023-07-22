@@ -20,7 +20,6 @@ const Header = () => {
             width="16"
             height="16"
             viewBox="0 -3 24 24"
-            className="headerHomeIcon"
           >
             <path
               fill="currentColor"
