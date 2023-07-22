@@ -23,4 +23,9 @@
 .headerLink {
   display: inline-block;
   margin: 0 0.5em 0 0.5em;
+  /* position: relative; */
 }
+
+/* .headerHomeIcon {
+  transform: translateY(5px);
+} */
