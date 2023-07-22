@@ -8,7 +8,7 @@ import {
 } from "../../redux/slices/feed/feedSlice";
 
 const Header = () => {
-  const feedMode = useAppSelector((state) => state.feed.feedMode);
+  // const feedMode = useAppSelector((state) => state.feed.feedMode);
   const dispatch = useAppDispatch();
 
   return (

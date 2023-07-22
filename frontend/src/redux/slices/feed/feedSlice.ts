@@ -2,10 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface FeedState {
   feedMode: "top" | "new" | "best" | "ask" | "show" | "job";
+  maxFeedSize: Number;
 }
 
 const initialState: FeedState = {
   feedMode: "top",
+  maxFeedSize: 50,
 };
 
 const feedSlice = createSlice({
