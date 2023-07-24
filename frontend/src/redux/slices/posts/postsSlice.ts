@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface Post {
-  id: Number;
-  author: String;
-  descendants: Number;
-  children?: Array<Number>; // TODO: do we want to keep this?
-  points: Number;
-  time: Number;
-  title: String;
-  type: String;
-  url: String;
+  id: number;
+  author: string;
+  descendants: number;
+  children?: Array<number>; // TODO: do we want to keep this?
+  points: number;
+  time: number;
+  title: string;
+  type: string;
+  url: string;
 }
 
 interface PostsState {
-  currentPostId: Number;
+  currentPostId: number;
   postsArray: Array<Post>;
 }
 
