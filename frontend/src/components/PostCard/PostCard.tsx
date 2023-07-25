@@ -39,6 +39,7 @@ const PostCard = (props: Post) => {
             width="12"
             height="12"
             viewBox="0 0 24 24"
+            className="postcard-info-icon"
           >
             <path
               fill="currentColor"
@@ -53,6 +54,7 @@ const PostCard = (props: Post) => {
             width="12"
             height="12"
             viewBox="0 0 24 24"
+            className="postcard-info-icon"
           >
             <path
               fill="currentColor"
@@ -67,6 +69,7 @@ const PostCard = (props: Post) => {
             width="12"
             height="12"
             viewBox="0 0 24 24"
+            className="postcard-info-icon"
           >
             <path
               fill="currentColor"
@@ -81,6 +84,7 @@ const PostCard = (props: Post) => {
             width="12"
             height="12"
             viewBox="0 0 24 24"
+            className="postcard-info-icon"
           >
             <path
               fill="currentColor"
