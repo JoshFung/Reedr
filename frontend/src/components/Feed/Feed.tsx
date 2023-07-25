@@ -1,5 +1,14 @@
+import { useAppSelector } from "../../redux/hooks";
+import PostCard from "../PostCard/PostCard";
+
 const Feed = () => {
-  return <div className="feedContainer"></div>;
+  const postsArray = useAppSelector((state) => state.posts.postsArray);
+
+  return (
+    <div className="feedContainer">
+      <PostCard {...postsArray[3]} />
+    </div>
+  );
 };
 
 export default Feed;

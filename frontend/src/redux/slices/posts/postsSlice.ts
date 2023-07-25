@@ -53,6 +53,21 @@ const initialState: PostsState = {
       type: "Story",
       url: "http://www.foundersatwork.com/stevewozniak.html",
     },
+    {
+      id: 36857314,
+      author: "luu",
+      descendants: 37,
+      children: [
+        36857935, 36858291, 36858372, 36858178, 36858258, 36858671, 36858382,
+        36858385, 36858157, 36858558, 36857825, 36857901, 36858270,
+      ],
+      points: 138,
+      time: 1690254026,
+      title:
+        "Got called to a professor's office after a complaint his SPARC4 was running slow",
+      type: "story",
+      url: "https://infosec.exchange/@paco/110772422266480371",
+    },
   ],
 };
 

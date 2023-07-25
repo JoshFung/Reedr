@@ -1,18 +1,8 @@
 import { Post } from "../../redux/slices/posts/postsSlice";
 
-const timeDifference = (previous: number) => {
-  const diff = Number(new Date()) - previous;
-  // const SEC = 1000; // 1000 milliseconds
-  // const MIN = 60 * SEC; // 60000 milliseconds
-  // const HOUR = 60 * MIN; // 3600000 milliseconds
-  // const DAY = 24 * HOUR; // 86400000 milliseconds
-  // const MONTH = 30 * DAY; // 2592000000 milliseconds
-  // const YEAR = 12 * MONTH; // 31104000000 milliseconds
-  // const timeUnitArray = [YEAR, MONTH, DAY, HOUR, MIN];
-  // timeUnitArray.forEach((timeUnit) => {
-
-  // })
-
+const timeDifference = (time: number) => {
+  const millisecondsTime = time * 1000;
+  const diff = Date.now() - millisecondsTime;
   const timeUnitDict = new Map([
     [31104000000, "yr"],
     [2592000000, "mo"],
@@ -21,32 +11,35 @@ const timeDifference = (previous: number) => {
     [60000, "min"],
   ]);
 
-  timeUnitDict.forEach((timeUnit, timeUnitMilliseconds) => {
+  for (const [timeUnitMilliseconds, timeUnit] of Array.from(
+    timeUnitDict.entries()
+  )) {
     const timeUnitCount = Math.floor(diff / timeUnitMilliseconds);
+
     if (timeUnitCount > 0) {
       return `${timeUnitCount} ${timeUnit}`;
     }
-  });
+  }
+
   return `0 min`;
 };
 
 const PostCard = (props: Post) => {
+  const { title, points, time, author, children } = props;
+  const convertedTime = timeDifference(time);
+  console.log(`convertedTime: ${convertedTime}`);
   return (
     <div className="postcard-container">
-      <div className="postcard-title">{props.title}</div>
+      <div className="postcard-title">{title}</div>
       <div className="postcard-info-container">
         <div className="postcard-points-container">
-          // TODO: Should it just be saved in Post interface as a string? //
-          convert it to a string in BE
-          <div className="postcard-points">{props.points.toString()}</div>
+          <div className="postcard-points">{points.toString()}</div>
         </div>
         <div className="postcard-comments-container">
-          {props.children ? props.children.length : 0}
+          {children ? children.length : 0}
         </div>
-        <div className="postcard-time-container">
-          // TODO: Should the time conversion (ex. 4 h) occur in the BE?
-        </div>
-        <div className="postcard-author-container"></div>
+        <div className="postcard-time-container">{convertedTime}</div>
+        <div className="postcard-author-container">{author}</div>
       </div>
     </div>
   );
