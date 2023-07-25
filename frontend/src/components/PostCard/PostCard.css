@@ -1,2 +1,50 @@
-.postCardContainer {
+.postcard-container {
+  border: 1px solid black;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.5rem; */
+}
+
+.postcard-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: justify;
+  margin: 0.5rem 0.5rem 0.25rem 0.5rem;
+}
+
+.postcard-info-container {
+  margin: 0rem 0.5rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* can't they all just be under this class? */
+.postcard-info-piece {
+  display: flex;
+  font-size: 0.5rem;
+  font-weight: 200;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.postcard-points-container {
+}
+
+.postcard-comments-container {
+}
+
+.postcard-time-container {
+  font-size: 0.5rem;
+  font-weight: 200;
+}
+
+.postcard-author-container {
+  font-size: 0.5rem;
+  font-weight: 200;
 }
