@@ -11,6 +11,10 @@
   height: 7vh;
 }
 
+.postcard-container:hover {
+  box-shadow: -0.25rem 0.25rem 0.25rem 0rem #ff9500;
+}
+
 .postcard-title {
   flex-grow: 1;
   margin: 0rem 0.5rem 0rem 0.5rem;
