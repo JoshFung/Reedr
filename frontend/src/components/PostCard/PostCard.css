@@ -1,22 +1,29 @@
 .postcard-container {
   border: 1px solid black;
   margin: 0.75rem 0.5rem 0.75rem 0.5rem;
+  padding: 0.125rem 0rem 0.125rem 0rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   /* x-offset | y-offset | blur radius | spread radius | colour */
   box-shadow: -0.25rem 0.25rem 0.25rem 0rem #343a40;
+  height: 7vh;
 }
 
 .postcard-title {
+  flex-grow: 1;
+  margin: 0rem 0.5rem 0rem 0.5rem;
+  display: flex;
+  align-items: center;
   font-size: 0.75rem;
   font-weight: 700;
-  text-align: justify;
-  margin: 0.5rem 0.5rem 0.25rem 0.5rem;
+  word-wrap: break-word;
+  text-align: left;
 }
 
 .postcard-info-container {
-  margin: 0.25rem 0.5rem 0.5rem 0.5rem;
+  margin: 0rem 0.5rem 0.25rem 0.5rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -47,6 +54,6 @@
 } */
 
 .postcard-info-icon {
-  /* color: #adb5bd; */
-  color: hsl(210, 11%, 71%);
+  color: #adb5bd;
+  /* color: hsl(210, 11%, 71%); */
 }

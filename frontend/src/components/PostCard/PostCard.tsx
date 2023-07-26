@@ -26,7 +26,8 @@ const timeDifference = (time: number) => {
 };
 
 const PostCard = (props: Post) => {
-  const { title, points, time, author, children } = props;
+  const { title, score, time, by, kids } = props;
+  console.log(title);
   const convertedTime = timeDifference(time);
   console.log(`convertedTime: ${convertedTime}`);
   return (
@@ -46,7 +47,7 @@ const PostCard = (props: Post) => {
               d="M16 13v8H8v-8H2L12 3l10 10h-6m-9-2h3v8h4v-8h3l-5-5l-5 5Z"
             />
           </svg>
-          {points.toString()}
+          {score.toString()}
         </div>
         <div className="postcard-info-piece postcard-comments-container">
           <svg
@@ -61,7 +62,7 @@ const PostCard = (props: Post) => {
               d="M9 22a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9m1-6v3.08L13.08 16H20V4H4v12h6Z"
             />
           </svg>
-          {children ? children.length : 0}
+          {kids ? kids.length : 0}
         </div>
         <div className="postcard-info-piece postcard-time-container">
           <svg
@@ -91,7 +92,7 @@ const PostCard = (props: Post) => {
               d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1Z"
             />
           </svg>
-          {author}
+          {by}
         </div>
       </div>
     </div>
