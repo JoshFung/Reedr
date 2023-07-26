@@ -1,31 +1,31 @@
 import { Post } from "../../redux/slices/posts/postsSlice";
 import "./PostCard.css";
 
-const timeDifference = (time: number) => {
-  const millisecondsTime = time * 1000;
-  const diff = Date.now() - millisecondsTime;
-  const timeUnitDict = new Map([
-    [31104000000, "yr"],
-    [2592000000, "mo"],
-    [86400000, "day"],
-    [3600000, "hr"],
-    [60000, "min"],
-  ]);
-
-  for (const [timeUnitMilliseconds, timeUnit] of Array.from(
-    timeUnitDict.entries()
-  )) {
-    const timeUnitCount = Math.floor(diff / timeUnitMilliseconds);
-
-    if (timeUnitCount > 0) {
-      return `${timeUnitCount} ${timeUnit}`;
-    }
-  }
-
-  return `0 min`;
-};
-
 const PostCard = (props: Post) => {
+  const timeDifference = (time: number) => {
+    const millisecondsTime = time * 1000;
+    const diff = Date.now() - millisecondsTime;
+    const timeUnitDict = new Map([
+      [31104000000, "yr"],
+      [2592000000, "mo"],
+      [86400000, "day"],
+      [3600000, "hr"],
+      [60000, "min"],
+    ]);
+
+    for (const [timeUnitMilliseconds, timeUnit] of Array.from(
+      timeUnitDict.entries()
+    )) {
+      const timeUnitCount = Math.floor(diff / timeUnitMilliseconds);
+
+      if (timeUnitCount > 0) {
+        return `${timeUnitCount} ${timeUnit}`;
+      }
+    }
+
+    return `0 min`;
+  };
+
   const { title, score, time, by, kids } = props;
   console.log(title);
   const convertedTime = timeDifference(time);
