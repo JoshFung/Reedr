@@ -4,6 +4,9 @@
   width: 100vw;
   height: 10vh;
   border-bottom: 2px solid #ced4da;
+  position: sticky;
+  top: 0;
+  background-color: #f8f9fa;
 }
 
 .headerLogo {
