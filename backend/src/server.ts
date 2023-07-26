@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import { config } from "dotenv";
-import { homeRouter } from "./routes/home";
+import { feedRouter } from "./routes/feed";
 
 const app = express();
 
@@ -13,7 +13,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.use("/", homeRouter);
+app.use("/", feedRouter);
 
 // 404
 app.use("*", (req, res) => {

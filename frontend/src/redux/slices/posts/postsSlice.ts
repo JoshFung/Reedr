@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../../store";
 
 export interface Post {
   id: number;
@@ -16,6 +17,9 @@ export interface Post {
 interface PostsState {
   currentPostId: number;
   postsArray: Array<Post>;
+  postIds: Array<number>;
+  status: "idle" | "loading" | "succeeded" | "failed";
+  error: string | null;
 }
 
 // TODO: later on remove this dummy data
@@ -255,6 +259,9 @@ const tempData = [
 const initialState: PostsState = {
   currentPostId: 1,
   postsArray: tempData,
+  postIds: [],
+  status: "idle",
+  error: null,
 };
 
 const postsSlice = createSlice({
@@ -264,3 +271,9 @@ const postsSlice = createSlice({
 });
 
 export default postsSlice.reducer;
+
+export const selectAllPosts = (state: RootState) => state.posts.postsArray;
+
+export const selectPostById = (state: RootState, postId: number) => {
+  state.posts.postsArray.find((post) => post.id === postId);
+};
