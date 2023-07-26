@@ -6,7 +6,9 @@ const Feed = () => {
 
   return (
     <div className="feedContainer">
-      <PostCard {...postsArray[3]} />
+      {postsArray.map((post) => {
+        return <PostCard {...post} />;
+      })}
     </div>
   );
 };
