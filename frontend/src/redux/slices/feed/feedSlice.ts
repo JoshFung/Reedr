@@ -43,4 +43,5 @@ export const {
   changeToShow,
   changeToJob,
 } = feedSlice.actions;
+
 export default feedSlice.reducer;

@@ -28,7 +28,7 @@ const PostCard = (props: Post) => {
 
   const { title, score, time, by, kids } = props;
   const convertedTime = timeDifference(time);
-  console.log(`convertedTime: ${convertedTime}`);
+  // console.log(`convertedTime: ${convertedTime}`);
   return (
     <div className="postcard-container">
       <div className="postcard-title">{title}</div>

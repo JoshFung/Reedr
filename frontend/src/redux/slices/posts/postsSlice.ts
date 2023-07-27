@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
+import axios, { AxiosResponse } from "axios";
 
 export interface Post {
   id: number;
@@ -264,16 +265,43 @@ const initialState: PostsState = {
   error: null,
 };
 
+export const fetchPostsIds = createAsyncThunk<AxiosResponse>(
+  "posts/fetchPostsIds",
+  async () => {
+    const apiUrl = process.env.REACT_APP_API_URL;
+    console.log(`apiUrl: ${apiUrl}`);
+    return await axios.get(`${apiUrl}/Top500Ids`);
+  }
+);
+
 const postsSlice = createSlice({
   name: "posts",
   initialState,
   reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchPostsIds.pending, (state) => {
+        console.log("LOADING");
+        state.status = "loading";
+      })
+      .addCase(fetchPostsIds.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        console.log(action.payload.data);
+        state.postIds = action.payload.data;
+      })
+      .addCase(fetchPostsIds.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message ?? null;
+      });
+  },
 });
-
-export default postsSlice.reducer;
 
 export const selectAllPosts = (state: RootState) => state.posts.postsArray;
 
 export const selectPostById = (state: RootState, postId: number) => {
   state.posts.postsArray.find((post) => post.id === postId);
 };
+
+export const selectFeedStatus = (state: RootState) => state.posts.status;
+
+export default postsSlice.reducer;
