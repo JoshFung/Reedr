@@ -14,7 +14,9 @@ const Feed = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    console.log(`Outer useEffect -> feedStatus: ${feedStatus}`);
     if (feedStatus === "idle") {
+      console.log(`Inner useEffect -> feedStatus: ${feedStatus}`);
       dispatch(fetchPostsIds());
     }
   }, [feedStatus, dispatch]);

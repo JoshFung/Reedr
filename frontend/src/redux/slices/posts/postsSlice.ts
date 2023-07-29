@@ -265,12 +265,13 @@ const initialState: PostsState = {
   error: null,
 };
 
-export const fetchPostsIds = createAsyncThunk<AxiosResponse>(
+export const fetchPostsIds = createAsyncThunk<number[]>(
   "posts/fetchPostsIds",
   async () => {
     const apiUrl = process.env.REACT_APP_API_URL;
-    console.log(`apiUrl: ${apiUrl}`);
-    return await axios.get(`${apiUrl}/Top500Ids`);
+    // console.log(`apiUrl: ${apiUrl}`);
+    const response = await axios.get(`${apiUrl}/Top500Ids`);
+    return response.data;
   }
 );
 
@@ -281,13 +282,12 @@ const postsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchPostsIds.pending, (state) => {
-        console.log("LOADING");
         state.status = "loading";
       })
       .addCase(fetchPostsIds.fulfilled, (state, action) => {
         state.status = "succeeded";
-        console.log(action.payload.data);
-        state.postIds = action.payload.data;
+        // console.log(action.payload);
+        state.postIds = action.payload;
       })
       .addCase(fetchPostsIds.rejected, (state, action) => {
         state.status = "failed";
