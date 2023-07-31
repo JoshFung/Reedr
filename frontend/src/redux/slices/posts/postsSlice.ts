@@ -269,7 +269,6 @@ export const fetchPostsIds = createAsyncThunk<number[]>(
   "posts/fetchPostsIds",
   async () => {
     const apiUrl = process.env.REACT_APP_API_URL;
-    // console.log(`apiUrl: ${apiUrl}`);
     const response = await axios.get(`${apiUrl}/Top500Ids`);
     return response.data;
   }
@@ -286,7 +285,6 @@ const postsSlice = createSlice({
       })
       .addCase(fetchPostsIds.fulfilled, (state, action) => {
         state.status = "succeeded";
-        // console.log(action.payload);
         state.postIds = action.payload;
       })
       .addCase(fetchPostsIds.rejected, (state, action) => {

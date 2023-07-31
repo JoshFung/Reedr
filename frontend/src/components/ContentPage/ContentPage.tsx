@@ -1,5 +1,6 @@
 import Feed from "../Feed/Feed";
 import Reader from "../Reader/Reader";
+import "./ContentPage.css";
 
 const ContentPage = () => {
   return (

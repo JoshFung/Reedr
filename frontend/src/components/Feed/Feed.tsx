@@ -7,6 +7,7 @@ import {
 import "./Feed.css";
 import PostCard from "../PostCard/PostCard";
 import { selectFeedStatus } from "../../redux/slices/posts/postsSlice";
+import Spinner from "../Spinner/Spinner";
 
 const Feed = () => {
   const postsArray = useAppSelector(selectAllPosts);
@@ -14,10 +15,10 @@ const Feed = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    console.log(`Outer useEffect -> feedStatus: ${feedStatus}`);
     if (feedStatus === "idle") {
-      console.log(`Inner useEffect -> feedStatus: ${feedStatus}`);
+      // StrictMode in index.tsx makes it run more than once
       dispatch(fetchPostsIds());
+      console.log("fetching ids");
     }
   }, [feedStatus, dispatch]);
 
@@ -25,7 +26,13 @@ const Feed = () => {
     return <PostCard {...post} />;
   });
 
-  return <div className="feedContainer">{renderPostCards}</div>;
+  return (
+    <div className="feedContainer">
+      {feedStatus === "idle" ? <Spinner /> : <div>{renderPostCards}</div>}
+    </div>
+  );
+
+  // return <div className="feedContainer">{renderPostCards}</div>;
 };
 
 export default Feed;
