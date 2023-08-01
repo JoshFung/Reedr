@@ -1,9 +1,8 @@
 import "./Header.css";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
-  changeToAsk,
-  changeToNew,
-  changeToTop,
+  changeFeedMode,
+  FeedModeEnum,
 } from "../../redux/slices/feed/feedSlice";
 
 const Header = () => {
@@ -14,7 +13,10 @@ const Header = () => {
     <header className="headerContainer">
       <h1 className="headerLogo">Reedr</h1>
       <ul className="headerLinkList">
-        <li className="headerLink" onClick={() => dispatch(changeToTop())}>
+        <li
+          className="headerLink"
+          onClick={() => dispatch(changeFeedMode(FeedModeEnum.TOP))}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -28,7 +30,10 @@ const Header = () => {
           </svg>
           Home
         </li>
-        <li className="headerLink" onClick={() => dispatch(changeToNew())}>
+        <li
+          className="headerLink"
+          onClick={() => dispatch(changeFeedMode(FeedModeEnum.NEW))}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -42,7 +47,10 @@ const Header = () => {
           </svg>
           Latest
         </li>
-        <li className="headerLink" onClick={() => dispatch(changeToAsk())}>
+        <li
+          className="headerLink"
+          onClick={() => dispatch(changeFeedMode(FeedModeEnum.ASK))}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

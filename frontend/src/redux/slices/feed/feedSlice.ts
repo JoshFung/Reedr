@@ -237,8 +237,21 @@ const tempData = [
   },
 ];
 
+// interface FeedMode {
+//   feedMode: "top" | "new" | "best" | "ask" | "show" | "job";
+// }
+
+export enum FeedModeEnum {
+  TOP = "top",
+  NEW = "new",
+  BEST = "best",
+  ASK = "ask",
+  SHOW = "show",
+  JOB = "job",
+}
+
 interface FeedState {
-  feedMode: "top" | "new" | "best" | "ask" | "show" | "job";
+  feedMode: FeedModeEnum;
   maxFeedSize: Number;
   postsArray: Array<Post>;
   postIds: Array<number>;
@@ -247,7 +260,7 @@ interface FeedState {
 }
 
 const initialState: FeedState = {
-  feedMode: "top",
+  feedMode: FeedModeEnum.TOP,
   maxFeedSize: 50,
   postsArray: tempData,
   postIds: [],
@@ -277,23 +290,8 @@ const feedSlice = createSlice({
   name: "feed",
   initialState,
   reducers: {
-    changeToTop: (state) => {
-      state.feedMode = "top";
-    },
-    changeToNew: (state) => {
-      state.feedMode = "new";
-    },
-    changeToBest: (state) => {
-      state.feedMode = "best";
-    },
-    changeToAsk: (state) => {
-      state.feedMode = "ask";
-    },
-    changeToShow: (state) => {
-      state.feedMode = "show";
-    },
-    changeToJob: (state) => {
-      state.feedMode = "job";
+    changeFeedMode: (state, action: { payload: FeedModeEnum }) => {
+      state.feedMode = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -320,13 +318,6 @@ export const selectPostById = (state: RootState, postId: number) => {
 
 export const selectFeedStatus = (state: RootState) => state.feed.status;
 
-export const {
-  changeToTop,
-  changeToNew,
-  changeToBest,
-  changeToAsk,
-  changeToShow,
-  changeToJob,
-} = feedSlice.actions;
+export const { changeFeedMode } = feedSlice.actions;
 
 export default feedSlice.reducer;
