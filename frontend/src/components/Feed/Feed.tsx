@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import "./Feed.css";
+import PostCard from "../PostCard/PostCard";
+import Spinner from "../Spinner/Spinner";
 import {
   fetchPostsIds,
   selectAllPosts,
-} from "../../redux/slices/posts/postsSlice";
-import "./Feed.css";
-import PostCard from "../PostCard/PostCard";
-import { selectFeedStatus } from "../../redux/slices/posts/postsSlice";
-import Spinner from "../Spinner/Spinner";
+  selectFeedStatus,
+} from "../../redux/slices/feed/feedSlice";
 
 const Feed = () => {
   const postsArray = useAppSelector(selectAllPosts);
@@ -17,8 +17,8 @@ const Feed = () => {
   useEffect(() => {
     if (feedStatus === "idle") {
       // StrictMode in index.tsx makes it run more than once
+      // console.log("fetching ids");
       dispatch(fetchPostsIds());
-      console.log("fetching ids");
     }
   }, [feedStatus, dispatch]);
 
@@ -31,8 +31,6 @@ const Feed = () => {
       {feedStatus === "idle" ? <Spinner /> : <div>{renderPostCards}</div>}
     </div>
   );
-
-  // return <div className="feedContainer">{renderPostCards}</div>;
 };
 
 export default Feed;
