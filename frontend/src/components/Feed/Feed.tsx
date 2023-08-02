@@ -4,23 +4,35 @@ import "./Feed.css";
 import PostCard from "../PostCard/PostCard";
 import Spinner from "../Spinner/Spinner";
 import {
+  StatusEnum,
+  fetchPosts,
   fetchPostsIds,
   selectAllPosts,
-  selectFeedStatus,
+  selectPostIdsStatus,
+  selectPostStatus,
 } from "../../redux/slices/feed/feedSlice";
 
 const Feed = () => {
   const postsArray = useAppSelector(selectAllPosts);
-  const feedStatus = useAppSelector(selectFeedStatus);
+  const postIdsStatus = useAppSelector(selectPostIdsStatus);
+  const postsStatus = useAppSelector(selectPostStatus);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (feedStatus === "idle") {
+    if (postIdsStatus === StatusEnum.IDLE) {
       // StrictMode in index.tsx makes it run more than once
-      // console.log("fetching ids");
       dispatch(fetchPostsIds());
     }
-  }, [feedStatus, dispatch]);
+  }, [postIdsStatus, dispatch]);
+
+  useEffect(() => {
+    if (
+      postIdsStatus === StatusEnum.SUCCEEDED &&
+      postsStatus === StatusEnum.IDLE
+    ) {
+      dispatch(fetchPosts());
+    }
+  }, [postIdsStatus, postsStatus, dispatch]);
 
   const renderPostCards = postsArray.map((post) => {
     return <PostCard {...post} />;
@@ -28,7 +40,7 @@ const Feed = () => {
 
   return (
     <div className="feedContainer">
-      {feedStatus === "idle" ? <Spinner /> : <div>{renderPostCards}</div>}
+      {postIdsStatus === "idle" ? <Spinner /> : <div>{renderPostCards}</div>}
     </div>
   );
 };

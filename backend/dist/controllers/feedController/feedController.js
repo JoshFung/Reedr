@@ -14,7 +14,6 @@ class FeedController {
                 res.status(200).send(response.data);
             });
         };
-        // TODO: function to get more than 50 items for infinite scrolling
         this.getById = (req, res) => {
             axios_1.default
                 .get(`https://hacker-news.firebaseio.com/v0/item/${req.params.id}.json`)
