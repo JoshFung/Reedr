@@ -40,7 +40,12 @@ const Feed = () => {
 
   return (
     <div className="feedContainer">
-      {postIdsStatus === "idle" ? <Spinner /> : <div>{renderPostCards}</div>}
+      {postIdsStatus !== StatusEnum.SUCCEEDED ||
+      postsStatus !== StatusEnum.SUCCEEDED ? (
+        <Spinner />
+      ) : (
+        <div>{renderPostCards}</div>
+      )}
     </div>
   );
 };
