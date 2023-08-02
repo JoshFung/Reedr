@@ -8,12 +8,15 @@ import {
   fetchPosts,
   fetchPostsIds,
   selectAllPosts,
+  selectAllPostsIds,
   selectPostIdsStatus,
   selectPostStatus,
 } from "../../redux/slices/feed/feedSlice";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Feed = () => {
   const postsArray = useAppSelector(selectAllPosts);
+  const postsIds = useAppSelector(selectAllPostsIds);
   const postIdsStatus = useAppSelector(selectPostIdsStatus);
   const postsStatus = useAppSelector(selectPostStatus);
   const dispatch = useAppDispatch();
@@ -41,10 +44,24 @@ const Feed = () => {
   return (
     <div className="feedContainer">
       {postIdsStatus !== StatusEnum.SUCCEEDED ||
-      postsStatus !== StatusEnum.SUCCEEDED ? (
+      (postsStatus !== StatusEnum.SUCCEEDED && postsArray.length < 50) ? (
         <Spinner />
       ) : (
-        <div>{renderPostCards}</div>
+        <InfiniteScroll
+          next={() => dispatch(fetchPosts())}
+          // next={() =>
+          //   setTimeout(() => {
+          //     console.log("timeout done");
+          //   }, 10000000)
+          // }
+          hasMore={postsArray.length < postsIds.length}
+          dataLength={postsArray.length}
+          loader={<Spinner />}
+          scrollThreshold="0.8"
+          endMessage={<h1>End of posts!</h1>} // change to BottomMessage component
+        >
+          {renderPostCards}
+        </InfiniteScroll>
       )}
     </div>
   );

@@ -23,7 +23,7 @@ interface FeedState {
   feedMode: FeedModeEnum;
   maxFeedSize: number;
   postsArray: Array<Post>;
-  postIds: Array<number>;
+  postsIds: Array<number>;
   idStatus: StatusEnum;
   postStatus: StatusEnum;
   error: string | null;
@@ -33,7 +33,7 @@ const initialState: FeedState = {
   feedMode: FeedModeEnum.TOP,
   maxFeedSize: 0,
   postsArray: [],
-  postIds: [],
+  postsIds: [],
   idStatus: StatusEnum.IDLE,
   postStatus: StatusEnum.IDLE,
   error: null,
@@ -57,18 +57,17 @@ export const fetchPosts = createAsyncThunk<Post[], void, { state: RootState }>(
   async (_, { getState, dispatch }) => {
     const apiUrl = process.env.REACT_APP_API_URL;
     const state = getState();
-    const postIds = state.feed.postIds;
+    const postsIds = state.feed.postsIds;
     const maxFeedSize = state.feed.maxFeedSize;
-    if (maxFeedSize < postIds.length) {
+    if (maxFeedSize < postsIds.length) {
       try {
         const response = await Promise.all(
-          postIds.slice(maxFeedSize, maxFeedSize + 49).map((id) => {
+          postsIds.slice(maxFeedSize, maxFeedSize + 50).map((id) => {
             return axios.get(`${apiUrl}/item/${id}`);
           })
         );
         const data = response.map((res) => res.data);
-        // console.log(data);
-        dispatch(incrementMaxFeedSize);
+        dispatch(incrementMaxFeedSize());
         return data;
       } catch {
         throw Error("Failed to fetch posts");
@@ -100,7 +99,7 @@ const feedSlice = createSlice({
       })
       .addCase(fetchPostsIds.fulfilled, (state, action) => {
         state.idStatus = StatusEnum.SUCCEEDED;
-        state.postIds = action.payload;
+        state.postsIds = action.payload;
       })
       .addCase(fetchPostsIds.rejected, (state, action) => {
         state.idStatus = StatusEnum.FAILED;
@@ -121,7 +120,7 @@ const feedSlice = createSlice({
 });
 
 // const selectMaxFeedSize = (state: RootState) => state.feed.maxFeedSize;
-// const selectAllPostIds = (state: RootState) => state.feed.postIds;
+export const selectAllPostsIds = (state: RootState) => state.feed.postsIds;
 export const selectAllPosts = (state: RootState) => state.feed.postsArray;
 
 export const selectPostById = (state: RootState, postId: number) => {
