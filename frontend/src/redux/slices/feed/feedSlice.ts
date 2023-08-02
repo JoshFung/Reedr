@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Post } from "../posts/postsSlice";
 import axios, { AxiosResponse } from "axios";
 import { RootState } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../hooks";
 
 // TODO: later on remove this dummy data
 const tempData = [
@@ -252,7 +253,7 @@ export enum FeedModeEnum {
 
 interface FeedState {
   feedMode: FeedModeEnum;
-  maxFeedSize: Number;
+  maxFeedSize: number;
   postsArray: Array<Post>;
   postIds: Array<number>;
   status: "idle" | "loading" | "succeeded" | "failed";
@@ -261,7 +262,7 @@ interface FeedState {
 
 const initialState: FeedState = {
   feedMode: FeedModeEnum.TOP,
-  maxFeedSize: 50,
+  maxFeedSize: 0,
   postsArray: tempData,
   postIds: [],
   status: "idle",
@@ -272,17 +273,39 @@ export const fetchPostsIds = createAsyncThunk<number[]>(
   "posts/fetchPostsIds",
   async () => {
     const apiUrl = process.env.REACT_APP_API_URL;
-    const response = await axios.get(`${apiUrl}/Top500Ids`);
-    return response.data;
+    try {
+      const response = await axios.get(`${apiUrl}/Top500Ids`);
+      return response.data;
+    } catch {
+      throw Error("Error fetching post IDs");
+    }
   }
 );
 
-export const fetchFiftyPosts = createAsyncThunk<Post[]>(
+export const fetchPosts = createAsyncThunk<Post[], void, { state: RootState }>(
   "posts/fetchFiftyPosts",
-  async () => {
+  async (_, { getState, dispatch }) => {
     const apiUrl = process.env.REACT_APP_API_URL;
-    const response = await axios.get(`${apiUrl}/Top500`);
-    return response.data;
+    const state = getState();
+    const postIds = state.feed.postIds;
+    const maxFeedSize = state.feed.maxFeedSize;
+    if (maxFeedSize < postIds.length) {
+      try {
+        const response = await Promise.all(
+          postIds.slice(maxFeedSize, maxFeedSize + 49).map((id) => {
+            return axios.get(`${apiUrl}/item`, { params: { id } });
+          })
+        );
+        const data = response.map((res) => res.data);
+        console.log(data);
+        dispatch(incrementMaxFeedSize);
+        return data;
+      } catch {
+        throw Error("Failed to fetch posts");
+      }
+    } else {
+      throw Error("No more posts to fetch");
+    }
   }
 );
 
@@ -292,6 +315,12 @@ const feedSlice = createSlice({
   reducers: {
     changeFeedMode: (state, action: { payload: FeedModeEnum }) => {
       state.feedMode = action.payload;
+
+      // reset to only having 50 posts if we change
+      state.maxFeedSize = 0;
+    },
+    incrementMaxFeedSize: (state) => {
+      state.maxFeedSize += 50;
     },
   },
   extraReducers: (builder) => {
@@ -310,6 +339,8 @@ const feedSlice = createSlice({
   },
 });
 
+const selectMaxFeedSize = (state: RootState) => state.feed.maxFeedSize;
+const selectAllPostIds = (state: RootState) => state.feed.postIds;
 export const selectAllPosts = (state: RootState) => state.feed.postsArray;
 
 export const selectPostById = (state: RootState, postId: number) => {
@@ -318,6 +349,6 @@ export const selectPostById = (state: RootState, postId: number) => {
 
 export const selectFeedStatus = (state: RootState) => state.feed.status;
 
-export const { changeFeedMode } = feedSlice.actions;
+export const { changeFeedMode, incrementMaxFeedSize } = feedSlice.actions;
 
 export default feedSlice.reducer;

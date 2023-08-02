@@ -11,8 +11,6 @@ export default class FeedController {
       });
   };
 
-  // TODO: function to get more than 50 items for infinite scrolling
-
   getById = (req: Request, res: Response) => {
     axios
       .get(`https://hacker-news.firebaseio.com/v0/item/${req.params.id}.json`)
