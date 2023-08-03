@@ -13,6 +13,7 @@ import {
   selectPostStatus,
 } from "../../redux/slices/feed/feedSlice";
 import InfiniteScroll from "react-infinite-scroll-component";
+import BottomMessage from "../BottomMessage/BottomMessage";
 
 const Feed = () => {
   const postsArray = useAppSelector(selectAllPosts);
@@ -56,9 +57,10 @@ const Feed = () => {
           // }
           hasMore={postsArray.length < postsIds.length}
           dataLength={postsArray.length}
-          loader={<Spinner />}
+          // loader={<Spinner />}
+          loader={<BottomMessage message="Loading more reeds... 🫧" />}
           scrollThreshold="0.8"
-          endMessage={<h1>End of posts!</h1>} // change to BottomMessage component
+          endMessage={<BottomMessage message="No more reeds! 🌊" />} // change to BottomMessage component
         >
           {renderPostCards}
         </InfiniteScroll>
