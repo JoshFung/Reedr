@@ -4,7 +4,7 @@ import "./ContentPage.css";
 
 const ContentPage = () => {
   return (
-    <div className="contentContainer">
+    <div className="contentContainer" id="topContentContainer">
       <Feed />
       <Reader />
     </div>

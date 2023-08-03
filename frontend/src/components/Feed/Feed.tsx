@@ -57,10 +57,10 @@ const Feed = () => {
           // }
           hasMore={postsArray.length < postsIds.length}
           dataLength={postsArray.length}
-          // loader={<Spinner />}
           loader={<BottomMessage message="Loading more reeds... 🫧" />}
           scrollThreshold="0.8"
-          endMessage={<BottomMessage message="No more reeds! 🌊" />} // change to BottomMessage component
+          endMessage={<BottomMessage message="No more reeds! 🌊" />}
+          scrollableTarget="topContentContainer" // from ContentPage -- Allows us to scroll to load more posts
         >
           {renderPostCards}
         </InfiniteScroll>
