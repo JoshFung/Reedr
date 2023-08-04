@@ -29,6 +29,8 @@ const Reader = () => {
         </div>
       </div>
       <div className="comment-container"></div>
+
+      {/* MAYBE JUST MAKE TWO SEPARATE COMPONENTS -> ONE FOR HEAD OF READER, ONE FOR COMMENTS OF READER */}
     </div>
   );
 };
