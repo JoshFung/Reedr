@@ -5,7 +5,8 @@ import "./ContentPage.css";
 const ContentPage = () => {
   return (
     <div className="contentContainer" id="topContentContainer">
-      <Feed />
+      {/* TODO: uncomment after developing Reader */}
+      {/* <Feed /> */}
       <Reader />
     </div>
   );

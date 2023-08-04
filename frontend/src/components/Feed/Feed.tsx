@@ -50,15 +50,10 @@ const Feed = () => {
       ) : (
         <InfiniteScroll
           next={() => dispatch(fetchPosts())}
-          // next={() =>
-          //   setTimeout(() => {
-          //     console.log("timeout done");
-          //   }, 10000000)
-          // }
           hasMore={postsArray.length < postsIds.length}
           dataLength={postsArray.length}
           loader={<BottomMessage message="Loading more reeds... 🫧" />}
-          scrollThreshold="0.8"
+          scrollThreshold="80%"
           endMessage={<BottomMessage message="No more reeds! 🌊" />}
           scrollableTarget="topContentContainer" // from ContentPage -- Allows us to scroll to load more posts
         >
