@@ -1,0 +1,40 @@
+.reader-container {
+  margin: 1rem 1rem 1rem 1rem;
+  height: 100%;
+  border: #212529 3px solid;
+  box-shadow: -0.25rem 0.25rem 0.25rem 0rem #343a40;
+  border-radius: 5px;
+}
+
+.post-container {
+}
+
+.post-main {
+}
+
+.post-title {
+}
+
+.post-main-info-container {
+}
+
+.post-main-info {
+}
+
+.post-main-link {
+}
+
+.post-bottom {
+}
+
+.post-bottom-likes {
+}
+
+.post-bottom-comments {
+}
+
+.post-bottom-share {
+}
+
+.comment-container {
+}
