@@ -1,28 +1,38 @@
-.reader-container {
-  margin: 1rem 1rem 1rem 1rem;
-  height: 100%;
-  border: #212529 3px solid;
-  box-shadow: -0.25rem 0.25rem 0.25rem 0rem #343a40;
-  border-radius: 5px;
-}
-
 .post-container {
+  height: 20%;
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .post-main {
+  display: flex;
+  flex-direction: column;
 }
 
 .post-title {
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: left;
+  margin: 0.25rem 0.25rem 0.25rem 0.25rem;
+  hyphens: auto;
 }
 
 .post-main-info-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .post-main-info {
+  font-size: 0.75rem;
+  font-weight: 400;
 }
 
 .post-main-link {
+  font-size: 0.5rem;
+  font-weight: 200;
+  font-style: italic;
 }
+
+/* --- */
 
 .post-bottom {
 }
@@ -34,7 +44,4 @@
 }
 
 .post-bottom-share {
-}
-
-.comment-container {
 }
