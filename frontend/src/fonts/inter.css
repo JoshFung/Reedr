@@ -1,0 +1,16 @@
+/* making use of variable font instead */
+@font-face {
+  font-family: "Inter var";
+  font-weight: 100 900;
+  font-display: swap; /* for downloaded fonts, if the font isn't loaded in yet, it will render to a fallback font face */
+  font-style: normal;
+  src: url("./Inter.var.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Inter var";
+  font-weight: 100 900;
+  font-display: swap; /* for downloaded fonts, if the font isn't loaded in yet, it will render to a fallback font face */
+  font-style: italic;
+  src: url("./Inter.var.woff2") format("woff2-variations");
+}
