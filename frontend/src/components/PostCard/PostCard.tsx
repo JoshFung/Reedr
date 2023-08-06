@@ -34,7 +34,7 @@ const PostCard = (props: Post) => {
     <div className="postcard-container">
       <div className="postcard-title">{title}</div>
       <div className="postcard-info-container">
-        <div className="postcard-info-piece postcard-points-container">
+        <div className="postcard-info-piece">
           <Icon
             icon="mdi:arrow-up-bold-outline"
             width="12"
@@ -43,7 +43,7 @@ const PostCard = (props: Post) => {
           />
           {score.toString()}
         </div>
-        <div className="postcard-info-piece postcard-comments-container">
+        <div className="postcard-info-piece">
           <Icon
             icon="mdi:comment-outline"
             width="12"
@@ -52,7 +52,7 @@ const PostCard = (props: Post) => {
           />
           {kids ? kids.length : 0}
         </div>
-        <div className="postcard-info-piece postcard-time-container">
+        <div className="postcard-info-piece">
           <Icon
             icon="mdi:clock-outline"
             width="12"
@@ -61,7 +61,7 @@ const PostCard = (props: Post) => {
           />
           {convertedTime}
         </div>
-        <div className="postcard-info-piece postcard-author-container">
+        <div className="postcard-info-piece">
           <Icon
             icon="mdi:account-outline"
             width="12"
