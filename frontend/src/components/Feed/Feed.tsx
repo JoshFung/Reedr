@@ -39,7 +39,7 @@ const Feed = () => {
   }, [postIdsStatus, postsStatus, dispatch]);
 
   const renderPostCards = postsArray.map((post) => {
-    return <PostCard {...post} />;
+    return <PostCard key={post.id} {...post} />;
   });
 
   return (
