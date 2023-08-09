@@ -28,7 +28,7 @@ const ReaderPost = () => {
               height="12"
               className="post-main-link-icon"
             />
-            ({domain})
+            ( {domain})
           </div>
         </div>
       </div>
