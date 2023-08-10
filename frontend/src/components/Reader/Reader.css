@@ -1,7 +1,7 @@
 .reader-container {
   margin: 1rem 1rem 1rem 1rem;
   height: 100%;
-  border: #212529 3px solid;
+  border: #212529 1px solid;
   /* box-shadow: -0.25rem 0.25rem 0.25rem 0rem #343a40; */
   box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.8);
   border-radius: 5px;

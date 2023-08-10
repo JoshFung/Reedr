@@ -1,5 +1,6 @@
-.headerContainer {
+.header-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100vw;
   height: 10%;
@@ -9,24 +10,25 @@
   background-color: #f8f9fa;
 }
 
-.headerLogo {
-  margin: 0 0.25em 0 0.25em;
+.header-title {
+  margin: 0 0 0 0.75rem;
   font-weight: 900;
   font-size: 3rem;
 }
 
-.headerLinkList {
+.header-link-list {
   display: flex;
   align-items: center;
   padding: 0;
-  margin-left: auto;
-  margin-right: 1.25em;
 }
 
-.headerLink {
-  display: inline-block;
-  margin: 0 0.5em 0 0.5em;
-  /* position: relative; */
+.header-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-right: 0.75rem;
 }
 
 /* .headerHomeIcon {

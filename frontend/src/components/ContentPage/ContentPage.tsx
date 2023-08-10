@@ -6,8 +6,8 @@ const ContentPage = () => {
   return (
     <div className="contentContainer" id="topContentContainer">
       {/* TODO: uncomment after developing Reader */}
-      {/* <Feed /> */}
-      <Reader />
+      <Feed />
+      {/* <Reader /> */}
     </div>
   );
 };

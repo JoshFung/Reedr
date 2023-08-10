@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 
-export interface Post {
+// TODO: COMPLETE THIS SLICE
+
+export interface Comment {
   id: number;
   by: string;
   descendants?: number;
@@ -15,29 +17,17 @@ export interface Post {
 }
 
 interface PostsState {
-  selectedPost: Post | null;
+  currentPostId: number;
 }
 
 const initialState: PostsState = {
-  selectedPost: null,
+  currentPostId: 1,
 };
 
 const postsSlice = createSlice({
   name: "posts",
   initialState,
-  reducers: {
-    setSelectedPost: (state, action: { payload: Post }) => {
-      state.selectedPost = action.payload;
-    },
-    setNoPost: (state) => {
-      state.selectedPost = null;
-    },
-  },
+  reducers: {},
 });
-
-export const selectSelectedPost = (state: RootState) =>
-  state.posts.selectedPost;
-
-export const { setSelectedPost, setNoPost } = postsSlice.actions;
 
 export default postsSlice.reducer;

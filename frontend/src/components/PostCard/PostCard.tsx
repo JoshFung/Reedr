@@ -1,8 +1,11 @@
-import { Post } from "../../redux/slices/posts/postsSlice";
+import { Post, setSelectedPost } from "../../redux/slices/posts/postsSlice";
+import { useAppDispatch } from "../../redux/hooks";
 import { Icon } from "@iconify/react";
 import "./PostCard.css";
 
 const PostCard = (props: Post) => {
+  const dispatch = useAppDispatch();
+
   const timeDifference = (time: number) => {
     const millisecondsTime = time * 1000;
     const diff = Date.now() - millisecondsTime;
@@ -31,7 +34,12 @@ const PostCard = (props: Post) => {
   const convertedTime = timeDifference(time);
   // console.log(`convertedTime: ${convertedTime}`);
   return (
-    <div className="postcard-container">
+    <div
+      className="postcard-container"
+      onClick={() => {
+        dispatch(setSelectedPost(props));
+      }}
+    >
       <div className="postcard-title">{title}</div>
       <div className="postcard-info-container">
         <div className="postcard-info-piece">

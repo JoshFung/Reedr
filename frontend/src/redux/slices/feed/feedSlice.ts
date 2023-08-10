@@ -82,7 +82,7 @@ const feedSlice = createSlice({
   name: "feed",
   initialState,
   reducers: {
-    changeFeedMode: (state, action: { payload: FeedModeEnum }) => {
+    setFeedMode: (state, action: { payload: FeedModeEnum }) => {
       state.feedMode = action.payload;
 
       // reset to only having 50 posts if we change
@@ -130,6 +130,6 @@ export const selectPostById = (state: RootState, postId: number) => {
 export const selectPostIdsStatus = (state: RootState) => state.feed.idStatus;
 export const selectPostStatus = (state: RootState) => state.feed.postStatus;
 
-export const { changeFeedMode, incrementMaxFeedSize } = feedSlice.actions;
+export const { setFeedMode, incrementMaxFeedSize } = feedSlice.actions;
 
 export default feedSlice.reducer;
