@@ -1,11 +1,12 @@
+import { Post } from "../../redux/slices/posts/postsSlice";
 import "./Reader.css";
 import ReaderComments from "./ReaderComments/ReaderComments";
-import ReaderPost from "./ReaderPost/ReaderPost";
+import ReaderPost, { PostProps } from "./ReaderPost/ReaderPost";
 
-const Reader = () => {
+const Reader = (props: Post) => {
   return (
     <div className="reader-container">
-      <ReaderPost />
+      <ReaderPost {...props} />
       <ReaderComments />
     </div>
   );

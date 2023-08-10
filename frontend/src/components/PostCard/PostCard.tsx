@@ -1,38 +1,15 @@
 import { Post, setSelectedPost } from "../../redux/slices/posts/postsSlice";
 import { useAppDispatch } from "../../redux/hooks";
+import { timeDifference } from "../../utils/helpers";
 import { Icon } from "@iconify/react";
 import "./PostCard.css";
 
 const PostCard = (props: Post) => {
   const dispatch = useAppDispatch();
 
-  const timeDifference = (time: number) => {
-    const millisecondsTime = time * 1000;
-    const diff = Date.now() - millisecondsTime;
-    const timeUnitDict = new Map([
-      [31104000000, "yr"],
-      [2592000000, "mo"],
-      [86400000, "day"],
-      [3600000, "hr"],
-      [60000, "min"],
-    ]);
+  const { title, score, time, by, descendants } = props;
+  const convertedTime = timeDifference(time, false);
 
-    for (const [timeUnitMilliseconds, timeUnit] of Array.from(
-      timeUnitDict.entries()
-    )) {
-      const timeUnitCount = Math.floor(diff / timeUnitMilliseconds);
-
-      if (timeUnitCount > 0) {
-        return `${timeUnitCount} ${timeUnit}`;
-      }
-    }
-
-    return `0 min`;
-  };
-
-  const { title, score, time, by, kids } = props;
-  const convertedTime = timeDifference(time);
-  // console.log(`convertedTime: ${convertedTime}`);
   return (
     <div
       className="postcard-container"
@@ -58,7 +35,7 @@ const PostCard = (props: Post) => {
             height="12"
             className="postcard-info-icon"
           />
-          {kids ? kids.length : 0}
+          {descendants ?? 0}
         </div>
         <div className="postcard-info-piece">
           <Icon

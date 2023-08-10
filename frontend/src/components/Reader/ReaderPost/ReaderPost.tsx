@@ -1,15 +1,19 @@
+import { timeDifference } from "../../../utils/helpers";
 import "./ReaderPost.css";
 import { Icon } from "@iconify/react";
 
-const ReaderPost = () => {
-  // dummy vars
-  const title =
-    "A Caltech Nobel laureate celebrates his 100th birthday, then gets back to work";
-  const author = "pseudolus";
-  const time = "11 hours ago";
-  const domain = "theguardian.com";
-  const points = 277;
-  const comments = 122;
+export interface PostProps {
+  title: string;
+  by: string;
+  time: number;
+  url?: string;
+  score: number;
+  descendants?: number;
+}
+
+const ReaderPost = (props: PostProps) => {
+  const { title, by, time, url, score, descendants } = props;
+  const convertedTime = timeDifference(time, true);
 
   return (
     <div className="post-container">
@@ -18,8 +22,8 @@ const ReaderPost = () => {
         <div className="post-main-info-container">
           <div className="post-main-info">
             By
-            <span className="post-main-info-author">{` ${author} `}</span>
-            {time}
+            <span className="post-main-info-author">{` ${by} `}</span>
+            {convertedTime}
           </div>
           <div className="post-main-link">
             <Icon
@@ -28,7 +32,7 @@ const ReaderPost = () => {
               height="12"
               className="post-main-link-icon"
             />
-            ( {domain})
+            ( {url})
           </div>
         </div>
       </div>
@@ -44,7 +48,7 @@ const ReaderPost = () => {
             height="16"
             className="post-bottom-info-icon"
           />
-          {points}
+          {score}
         </div>
         <div className="post-bottom-info">
           <Icon
@@ -53,7 +57,7 @@ const ReaderPost = () => {
             height="16"
             className="post-bottom-info-icon"
           />
-          {comments}
+          {descendants ?? 0}
         </div>
         <div className="post-bottom-info">
           <Icon
