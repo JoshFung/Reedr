@@ -1,12 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import feedReducer from "./slices/feed/feedSlice";
 import postsReducer from "./slices/posts/postsSlice";
 
+const rootReducer = combineReducers({
+  feed: feedReducer,
+  posts: postsReducer,
+});
+
 const store = configureStore({
-  reducer: {
-    feed: feedReducer,
-    posts: postsReducer,
-  },
+  reducer: rootReducer,
 });
 
 export type RootState = ReturnType<typeof store.getState>;
