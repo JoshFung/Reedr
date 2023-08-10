@@ -26,19 +26,6 @@ const Header = () => {
       >
         {selectedPost ? "Close" : "Reedr"}
       </h2>
-      {/* <div
-        // className={`header-title-container ${clickable}`}
-        // onClick = {selectedPost && handleTitleClick} not working for some reason
-        className="header-title-container"
-        onClick={isClickable ? handleTitleClick : undefined}
-      >
-        <h2 className="header-title">{selectedPost ? 'Close' : 'Reedr'}</h2>
-        {selectedPost && (
-          <h2 className="header-close-reader-subtitle">
-            Click to close reader
-          </h2>
-        )}
-      </div> */}
       <ul className="header-link-list">
         <li
           className="header-link"
