@@ -34,7 +34,7 @@ const initialState: FeedState = {
 };
 
 export const fetchPostsIds = createAsyncThunk<number[]>(
-  "posts/fetchPostsIds",
+  "feed/fetchPostsIds",
   async () => {
     const apiUrl = process.env.REACT_APP_API_URL;
     try {
@@ -47,7 +47,7 @@ export const fetchPostsIds = createAsyncThunk<number[]>(
 );
 
 export const fetchPosts = createAsyncThunk<Post[], void, { state: RootState }>(
-  "posts/fetchFiftyPosts",
+  "feed/fetchFiftyPosts",
   async (_, { getState, dispatch }) => {
     const apiUrl = process.env.REACT_APP_API_URL;
     const state = getState();
