@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { Post } from "../posts/postsSlice";
+import { Post } from "../post/postSlice";
 import axios, { AxiosResponse } from "axios";
 import { RootState } from "../../store";
+import { StatusEnum } from "../../../utils/enums";
 
 export enum FeedModeEnum {
   TOP = "top",
@@ -10,13 +11,6 @@ export enum FeedModeEnum {
   ASK = "ask",
   SHOW = "show",
   JOB = "job",
-}
-
-export enum StatusEnum {
-  IDLE = "idle",
-  LOADING = "loading",
-  SUCCEEDED = "succeeded",
-  FAILED = "failed",
 }
 
 interface FeedState {

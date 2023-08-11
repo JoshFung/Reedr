@@ -14,16 +14,16 @@ export interface Post {
   text?: string; // HN text posts
 }
 
-interface PostsState {
+interface PostState {
   selectedPost: Post | null;
 }
 
-const initialState: PostsState = {
+const initialState: PostState = {
   selectedPost: null,
 };
 
-const postsSlice = createSlice({
-  name: "posts",
+const postSlice = createSlice({
+  name: "post",
   initialState,
   reducers: {
     setSelectedPost: (state, action: { payload: Post }) => {
@@ -38,6 +38,6 @@ const postsSlice = createSlice({
 export const selectSelectedPost = (state: RootState) =>
   state.posts.selectedPost;
 
-export const { setSelectedPost, setNoPost } = postsSlice.actions;
+export const { setSelectedPost, setNoPost } = postSlice.actions;
 
-export default postsSlice.reducer;
+export default postSlice.reducer;

@@ -1,4 +1,4 @@
-import { Post } from "../../redux/slices/posts/postsSlice";
+import { Post } from "../../redux/slices/post/postSlice";
 import "./Reader.css";
 import ReaderComments from "./ReaderComments/ReaderComments";
 import ReaderPost, { PostProps } from "./ReaderPost/ReaderPost";

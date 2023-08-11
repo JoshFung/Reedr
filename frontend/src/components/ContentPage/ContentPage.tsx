@@ -1,5 +1,5 @@
 import { useAppSelector } from "../../redux/hooks";
-import { selectSelectedPost } from "../../redux/slices/posts/postsSlice";
+import { selectSelectedPost } from "../../redux/slices/post/postSlice";
 import Feed from "../Feed/Feed";
 import Reader from "../Reader/Reader";
 import "./ContentPage.css";

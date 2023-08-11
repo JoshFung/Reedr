@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import feedReducer from "./slices/feed/feedSlice";
-import postsReducer from "./slices/posts/postsSlice";
+import postsReducer from "./slices/post/postSlice";
 
 const rootReducer = combineReducers({
   feed: feedReducer,

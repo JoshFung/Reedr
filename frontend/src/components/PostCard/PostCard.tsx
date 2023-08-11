@@ -1,4 +1,4 @@
-import { Post, setSelectedPost } from "../../redux/slices/posts/postsSlice";
+import { Post, setSelectedPost } from "../../redux/slices/post/postSlice";
 import { useAppDispatch } from "../../redux/hooks";
 import { timeDifference } from "../../utils/helpers";
 import { Icon } from "@iconify/react";

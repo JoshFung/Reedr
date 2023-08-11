@@ -5,7 +5,7 @@ import { setFeedMode, FeedModeEnum } from "../../redux/slices/feed/feedSlice";
 import {
   selectSelectedPost,
   setNoPost,
-} from "../../redux/slices/posts/postsSlice";
+} from "../../redux/slices/post/postSlice";
 import { useEffect } from "react";
 
 const Header = () => {
