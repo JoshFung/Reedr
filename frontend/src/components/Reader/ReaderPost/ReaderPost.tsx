@@ -14,6 +14,13 @@ export interface PostProps {
 const ReaderPost = (props: PostProps) => {
   const { title, by, time, url, score, descendants } = props;
   const convertedTime = timeDifference(time, true);
+  let domain;
+
+  if (url) {
+    // Source: https://stackoverflow.com/a/8498629/16217105
+    const matches = url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
+    domain = matches && matches[1];
+  }
 
   return (
     <div className="post-container">
@@ -23,17 +30,19 @@ const ReaderPost = (props: PostProps) => {
           <div className="post-main-info">
             By
             <span className="post-main-info-author">{` ${by} `}</span>
-            {convertedTime}
+            {`${convertedTime} ago`}
           </div>
-          <div className="post-main-link">
-            <Icon
-              icon="mdi:link-variant"
-              width="12"
-              height="12"
-              className="post-main-link-icon"
-            />
-            ( {url})
-          </div>
+          {url && (
+            <div className="post-main-link">
+              <Icon
+                icon="mdi:link-variant"
+                width="12"
+                height="12"
+                className="post-main-link-icon"
+              />
+              ({domain})
+            </div>
+          )}
         </div>
       </div>
       {/* they will all be styled the same so maybe make all children the same
