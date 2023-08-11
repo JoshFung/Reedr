@@ -57,7 +57,7 @@ export const fetchPosts = createAsyncThunk<Post[], void, { state: RootState }>(
       try {
         const response = await Promise.all(
           postsIds.slice(maxFeedSize, maxFeedSize + 50).map((id) => {
-            return axios.get(`${apiUrl}/item/${id}`);
+            return axios.get(`${apiUrl}/posts/${id}`);
           })
         );
         const data = response.map((res) => res.data);
