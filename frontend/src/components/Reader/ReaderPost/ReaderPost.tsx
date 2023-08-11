@@ -22,9 +22,15 @@ const ReaderPost = (props: PostProps) => {
     domain = matches && matches[1];
   }
 
+  const openLink = (url: string | undefined) => {
+    if (url) {
+      window.open(url, "_blank");
+    }
+  };
+
   return (
     <div className="post-container">
-      <div className="post-main">
+      <div className="post-main" onClick={() => openLink(url)}>
         <h2 className="post-title">{title}</h2>
         <div className="post-main-info-container">
           <div className="post-main-info">
