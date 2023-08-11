@@ -9,11 +9,7 @@ const ContentPage = () => {
 
   return (
     <div className="contentContainer" id="topContentContainer">
-      {/* TODO: THIS SEEMS TO BREAK THE INFINITE SCROLL? */}
       {selectedPost ? <Reader {...selectedPost} /> : <Feed />}
-
-      {/* <Feed />
-      {selectedPost && <Reader {...selectedPost} />} */}
     </div>
   );
 };
