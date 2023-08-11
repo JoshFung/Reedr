@@ -4,7 +4,6 @@ import "./Feed.css";
 import PostCard from "../PostCard/PostCard";
 import Spinner from "../Spinner/Spinner";
 import {
-  StatusEnum,
   fetchPosts,
   fetchPostsIds,
   selectAllPosts,
@@ -14,6 +13,7 @@ import {
 } from "../../redux/slices/feed/feedSlice";
 import InfiniteScroll from "react-infinite-scroll-component";
 import BottomMessage from "../BottomMessage/BottomMessage";
+import { StatusEnum } from "../../utils/enums";
 
 const Feed = () => {
   const postsArray = useAppSelector(selectAllPosts);
