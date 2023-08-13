@@ -16,7 +16,7 @@ export interface Post {
   text?: string; // HN text posts
 }
 
-interface Comment {
+export interface Comment {
   id: number;
   by: string;
   parent: number;
