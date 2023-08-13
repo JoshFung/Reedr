@@ -30,6 +30,7 @@ interface PostState {
   commentsArray: Array<Comment>;
   // commentsIds: Array<number>;
   commentsStatus: StatusEnum;
+  priorPostId: number | null;
   error: string | null;
 }
 
@@ -38,6 +39,7 @@ const initialState: PostState = {
   commentsArray: [],
   // commentsIds: [],
   commentsStatus: StatusEnum.IDLE,
+  priorPostId: null,
   error: null,
 };
 
@@ -82,6 +84,11 @@ const postSlice = createSlice({
   reducers: {
     setSelectedPost: (state, action: { payload: Post }) => {
       state.selectedPost = action.payload;
+      if (state.selectedPost.id !== state.priorPostId) {
+        state.commentsArray = [];
+        state.commentsStatus = StatusEnum.IDLE;
+        state.priorPostId = state.selectedPost.id;
+      }
     },
     setNoPost: (state) => {
       state.selectedPost = null;
