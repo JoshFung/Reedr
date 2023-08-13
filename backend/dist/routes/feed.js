@@ -10,5 +10,4 @@ const router = express_1.default.Router();
 exports.feedRouter = router;
 const feedController = new feedController_1.default();
 router.get("/Top500Ids", feedController.getTop500Ids);
-router.get("/posts/:id", feedController.getById);
 //# sourceMappingURL=feed.js.map

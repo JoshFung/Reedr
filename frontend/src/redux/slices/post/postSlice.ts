@@ -41,28 +41,29 @@ const initialState: PostState = {
   error: null,
 };
 
-const fetchComments = createAsyncThunk<Comment[], void, { state: RootState }>(
-  "post/fetchComments",
-  async (_, { getState }) => {
-    const apiUrl = process.env.REACT_APP_API_URL;
-    const state = getState();
-    const selectedPost = state.posts.selectedPost;
-    if (selectedPost && selectedPost.kids) {
-      try {
-        const response = await Promise.all(
-          selectedPost.kids.map((id) => {
-            return axios.get(`${apiUrl}/comments/${id}`);
-          })
-        );
-        const data = response.map((res) => res.data);
-        return data;
-      } catch {
-        throw Error("Failed to fetch comments");
-      }
+export const fetchComments = createAsyncThunk<
+  Comment[],
+  void,
+  { state: RootState }
+>("post/fetchComments", async (_, { getState }) => {
+  const apiUrl = process.env.REACT_APP_API_URL;
+  const state = getState();
+  const selectedPost = state.posts.selectedPost;
+  if (selectedPost && selectedPost.kids) {
+    try {
+      const response = await Promise.all(
+        selectedPost.kids.map((id) => {
+          return axios.get(`${apiUrl}/item/comment/${id}`);
+        })
+      );
+      const data = response.map((res) => res.data);
+      return data;
+    } catch {
+      throw Error("Failed to fetch comments");
     }
-    return [];
   }
-);
+  return [];
+});
 
 const postSlice = createSlice({
   name: "post",
@@ -93,6 +94,8 @@ const postSlice = createSlice({
 
 export const selectSelectedPost = (state: RootState) =>
   state.posts.selectedPost;
+export const selectCommentsStatus = (state: RootState) =>
+  state.posts.commentsStatus;
 
 export const { setSelectedPost, setNoPost } = postSlice.actions;
 

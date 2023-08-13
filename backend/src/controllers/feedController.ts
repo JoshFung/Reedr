@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { fetchTopStories } from "../services/feedService";
-import { fetchItemById } from "../services/commonService";
+import { fetchItemById } from "../services/itemService";
 
 export default class FeedController {
   getTop500Ids = (req: Request, res: Response) => {
@@ -24,16 +24,4 @@ export default class FeedController {
   getShow200Ids = (req: Request, res: Response) => {};
 
   getJob200Ids = (req: Request, res: Response) => {};
-
-  getById = (req: Request, res: Response) => {
-    const itemId = req.params.id;
-    fetchItemById(itemId)
-      .then((data) => {
-        console.log("FeedController - Get Item by Id");
-        res.status(200).send(data);
-      })
-      .catch((error) => {
-        res.status(500).send(error);
-      });
-  };
 }

@@ -3,6 +3,7 @@ import cors from "cors";
 import path from "path";
 import { config } from "dotenv";
 import { feedRouter } from "./routes/feed";
+import { itemRouter } from "./routes/item";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/", feedRouter);
+app.use("/item", itemRouter);
 
 // 404
 app.use("*", (req, res) => {
