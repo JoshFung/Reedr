@@ -51,8 +51,7 @@ export const fetchPosts = createAsyncThunk<Post[], void, { state: RootState }>(
   async (_, { getState, dispatch }) => {
     const apiUrl = process.env.REACT_APP_API_URL;
     const state = getState();
-    const postsIds = state.feed.postsIds;
-    const maxFeedSize = state.feed.maxFeedSize;
+    const { postsIds, maxFeedSize } = state.feed;
     if (maxFeedSize < postsIds.length) {
       try {
         const response = await Promise.all(
