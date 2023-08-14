@@ -114,6 +114,8 @@ export const selectSelectedPost = (state: RootState) =>
   state.posts.selectedPost;
 export const selectCommentsStatus = (state: RootState) =>
   state.posts.commentsStatus;
+export const selectCommentsArray = (state: RootState) =>
+  state.posts.commentsArray;
 
 export const { setSelectedPost, setNoPost } = postSlice.actions;
 
