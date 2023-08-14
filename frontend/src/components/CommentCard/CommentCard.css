@@ -3,11 +3,14 @@
 }
 
 .comment {
+  /* width: 100%;
+  height: auto; */
   margin: 0.25rem 0.75rem 0.25rem 0.75rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  white-space: normal;
   gap: 0.75rem;
 }
 
@@ -15,6 +18,10 @@
 }
 
 .comment-content {
+  max-width: 100%;
+  height: auto;
+  white-space: normal;
+  /* overflow: hidden; */
   margin: 0.5rem 0rem 0.5rem 0rem;
   display: flex;
   flex-direction: column;
@@ -26,6 +33,7 @@
   font-size: 0.75rem;
   text-align: left;
   margin: 0 0 0 0;
+  word-break: break-word;
 }
 
 .comment-info {
