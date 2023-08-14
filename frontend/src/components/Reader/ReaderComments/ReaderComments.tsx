@@ -1,3 +1,5 @@
+import { useAppSelector } from "../../../redux/hooks";
+import { selectCommentsArray } from "../../../redux/slices/post/postSlice";
 import CommentCard from "../../CommentCard/CommentCard";
 import "./ReaderComments.css";
 
@@ -16,11 +18,13 @@ const tempData = {
 };
 
 const ReaderComments = () => {
-  return (
-    <div className="comment-chain">
-      <CommentCard {...tempData} />
-    </div>
-  );
+  const comments = useAppSelector(selectCommentsArray);
+
+  const renderCommentCards = comments.map((comment) => {
+    return <CommentCard key={comment.id} {...comment} />;
+  });
+
+  return <div className="comment-chain">{renderCommentCards}</div>;
 };
 
 export default ReaderComments;
