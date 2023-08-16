@@ -24,7 +24,14 @@ const ReaderComments = () => {
     return <CommentCard key={comment.id} {...comment} />;
   });
 
-  return <div className="comment-chain">{renderCommentCards}</div>;
+  return (
+    <div className="comment-chain">
+      {
+        // TODO: fill in the null with comment component that says there are no comments
+        comments.length === 0 ? null : renderCommentCards
+      }
+    </div>
+  );
 };
 
 export default ReaderComments;
