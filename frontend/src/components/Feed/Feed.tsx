@@ -12,8 +12,8 @@ import {
   selectPostStatus,
 } from "../../redux/slices/feed/feedSlice";
 import InfiniteScroll from "react-infinite-scroll-component";
-import BottomMessage from "../BottomMessage/BottomMessage";
-import { StatusEnum } from "../../utils/enums";
+import FillerCard from "../FillerCard/FillerCard";
+import { FillerCardEnum, StatusEnum } from "../../utils/enums";
 
 const Feed = () => {
   const postsArray = useAppSelector(selectAllPosts);
@@ -52,9 +52,19 @@ const Feed = () => {
           next={() => dispatch(fetchPosts())}
           hasMore={postsArray.length < postsIds.length}
           dataLength={postsArray.length}
-          loader={<BottomMessage message="Loading more reeds... 🫧" />}
+          loader={
+            <FillerCard
+              type={FillerCardEnum.BOTTOM_MESSAGE}
+              message={"Loading more reeds... 🫧"}
+            />
+          }
           scrollThreshold="80%"
-          endMessage={<BottomMessage message="No more reeds! 🌊" />}
+          endMessage={
+            <FillerCard
+              type={FillerCardEnum.BOTTOM_MESSAGE}
+              message={"No more reeds! 🌊"}
+            />
+          }
           scrollableTarget="topContentContainer" // from ContentPage -- Allows us to scroll to load more posts
         >
           {renderPostCards}

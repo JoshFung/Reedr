@@ -1,12 +1,8 @@
-.bottomMessageContainer {
-  /* background: rgb(248, 249, 250);
-  background: linear-gradient(
-    180deg,
-    rgba(248, 249, 250, 1) 0%,
-    rgba(169, 214, 229, 1) 27%,
-    rgba(42, 111, 151, 1) 71%,
-    rgba(1, 42, 74, 1) 100%
-  ); */
+/*
+* BOTTOM MESSAGE
+*/
+
+.bottom-message-container {
   background: rgb(248, 249, 250);
   background: linear-gradient(
     180deg,
@@ -18,11 +14,29 @@
   );
 }
 
-.bottomMessageText {
+.bottom-message-text {
   margin-block-start: 0;
   margin-block-end: 0;
   padding: 1.5rem 0rem 1.5rem 0rem;
   color: #f8f9fa;
   font-weight: 800;
   font-size: 1.25rem;
+}
+
+/*
+* NO COMMENTS
+*/
+
+.no-comments-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.no-comments-text {
+  margin: 0 0 0 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #014f86;
 }
