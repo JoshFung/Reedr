@@ -23,6 +23,8 @@ export interface Comment {
   kids?: Array<number>; // note it does not directly tell us descendants like a post does
   text: string;
   time: number;
+  dead?: boolean;
+  deleted?: boolean;
 }
 
 interface PostState {
@@ -66,12 +68,18 @@ export const fetchComments = createAsyncThunk<
   }
 
   try {
-    const response = await Promise.all(
-      selectedPost.kids.map((id) => {
-        return axios.get(`${apiUrl}/item/comment/${id}`);
+    const response = await Promise.all<Comment>(
+      selectedPost.kids.map(async (id: number) => {
+        const response = await axios.get(`${apiUrl}/item/comment/${id}`);
+        const responseData = response.data;
+        if (responseData && !responseData.dead && !responseData.deleted) {
+          return responseData;
+        }
       })
     );
-    const data = response.map((res) => res.data);
+
+    const data = response.filter((res) => res !== null && res !== undefined);
+
     return data;
   } catch {
     throw Error("Failed to fetch comments");
