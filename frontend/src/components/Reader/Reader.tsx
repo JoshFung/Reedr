@@ -9,6 +9,7 @@ import { StatusEnum } from "../../utils/enums";
 import "./Reader.css";
 import ReaderComments from "./ReaderComments/ReaderComments";
 import ReaderPost from "./ReaderPost/ReaderPost";
+import Spinner from "../Spinner/Spinner";
 
 const Reader = (props: Post) => {
   const commentsStatus = useAppSelector(selectCommentsStatus);
@@ -22,8 +23,16 @@ const Reader = (props: Post) => {
 
   return (
     <div className="reader-container">
-      <ReaderPost {...props} />
-      <ReaderComments />
+      {commentsStatus !== StatusEnum.SUCCEEDED ? (
+        <div className="spinner-container">
+          <Spinner />
+        </div>
+      ) : (
+        <div className="reader-content">
+          <ReaderPost {...props} />
+          <ReaderComments />
+        </div>
+      )}
     </div>
   );
 };

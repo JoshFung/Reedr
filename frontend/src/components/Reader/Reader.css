@@ -1,4 +1,18 @@
 .reader-container {
+  width: 100%;
+}
+
+.spinner-container {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.reader-content {
   width: calc(100% - 2rem);
   margin: 1rem 1rem 1rem 1rem;
   border: #212529 1px solid;
