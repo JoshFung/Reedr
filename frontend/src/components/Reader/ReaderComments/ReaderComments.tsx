@@ -9,20 +9,10 @@ const ReaderComments = () => {
   const comments = useAppSelector(selectCommentsArray);
 
   const renderCommentCards = comments.map((comment) => {
-    return <CommentCard key={comment.id} {...comment} />;
+    return <CommentCard key={comment.id} comment={comment} depth={0} />;
   });
 
   return (
-    // <div className="comment-chain">
-    //   {
-    //     // TODO: fill in the null with comment component that says there are no comments
-    //     comments.length === 0 ? (
-    //       <FillerCard type={FillerCardEnum.NO_COMMENTS} />
-    //     ) : (
-    //       renderCommentCards
-    //     )
-    //   }
-    // </div>
     <>
       {comments.length === 0 ? (
         <FillerCard type={FillerCardEnum.NO_COMMENTS} />

@@ -40,3 +40,33 @@
   font-weight: 400;
   color: #014f86;
 }
+
+/*
+* SHOW CHILDREN BUTTON
+*/
+
+.show-children-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.25rem 0.75rem 0.25rem 0.75rem;
+  flex: 1;
+}
+
+.depth-bar-container {
+  height: 100%;
+  margin-right: 0.75rem;
+}
+
+.depth-bar {
+  width: 0.0625rem;
+  height: 100%;
+  background-color: red;
+}
+
+.show-children-text {
+  margin: 0 0 0 0;
+  font-size: 0.5rem;
+  font-weight: 200;
+}
