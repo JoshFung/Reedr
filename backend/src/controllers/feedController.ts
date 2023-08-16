@@ -6,7 +6,7 @@ export default class FeedController {
   getTop500Ids = (req: Request, res: Response) => {
     fetchTopStories()
       .then((data) => {
-        console.log("FeedController - Get Top 500 Ids");
+        // console.log("FeedController - Get Top 500 Ids");
         res.status(200).send(data);
       })
       .catch((error) => {

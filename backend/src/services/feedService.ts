@@ -4,7 +4,7 @@ export const fetchTopStories = () => {
   return axios
     .get("https://hacker-news.firebaseio.com/v0/topstories.json")
     .then((response: AxiosResponse) => {
-      console.log("feedService - Fetch Top Stories");
+      // console.log("feedService - Fetch Top Stories");
       return response.data;
     })
     .catch((error) => {

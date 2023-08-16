@@ -6,7 +6,7 @@ export default class ItemController {
     const postId = req.params.id;
     fetchItemById(postId)
       .then((data) => {
-        console.log("ItemController - Get Post by ID");
+        // console.log("ItemController - Get Post by ID");
         res.status(200).send(data);
       })
       .catch((error) => {
@@ -18,7 +18,7 @@ export default class ItemController {
     const commentId = req.params.id;
     fetchItemById(commentId)
       .then((data) => {
-        console.log("ItemController - Get Comment by Id");
+        // console.log("ItemController - Get Comment by Id");
         res.status(200).send(data);
       })
       .catch((error) => {

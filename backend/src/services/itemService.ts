@@ -4,7 +4,7 @@ export const fetchItemById = (id: string) => {
   return axios
     .get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
     .then((response: AxiosResponse) => {
-      console.log("itemService - Fetch Item by Id");
+      // console.log("itemService - Fetch Item by Id");
       return response.data;
     })
     .catch((error) => {
