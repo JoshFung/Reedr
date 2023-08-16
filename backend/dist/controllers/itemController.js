@@ -7,7 +7,7 @@ class ItemController {
             const postId = req.params.id;
             (0, itemService_1.fetchItemById)(postId)
                 .then((data) => {
-                console.log("ItemController - Get Post by ID");
+                // console.log("ItemController - Get Post by ID");
                 res.status(200).send(data);
             })
                 .catch((error) => {
@@ -18,7 +18,7 @@ class ItemController {
             const commentId = req.params.id;
             (0, itemService_1.fetchItemById)(commentId)
                 .then((data) => {
-                console.log("ItemController - Get Comment by Id");
+                // console.log("ItemController - Get Comment by Id");
                 res.status(200).send(data);
             })
                 .catch((error) => {

@@ -9,7 +9,7 @@ const fetchTopStories = () => {
     return axios_1.default
         .get("https://hacker-news.firebaseio.com/v0/topstories.json")
         .then((response) => {
-        console.log("feedService - Fetch Top Stories");
+        // console.log("feedService - Fetch Top Stories");
         return response.data;
     })
         .catch((error) => {

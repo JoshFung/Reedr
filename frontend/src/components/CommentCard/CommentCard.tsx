@@ -9,10 +9,8 @@ const CommentCard = (props: Comment) => {
   const { by, time, text, kids } = props;
   const convertedTime = timeDifference(time, true);
   const directChildren = kids?.length ?? 0;
-  console.log(props);
 
   const convertText = (text: string) => {
-    console.log(text);
     const convertChars = he.decode(text);
     const convertTags = convertChars.replace(/<p>/g, "\n\n");
     return parse(convertTags);

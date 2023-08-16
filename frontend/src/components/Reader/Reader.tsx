@@ -8,7 +8,7 @@ import {
 import { StatusEnum } from "../../utils/enums";
 import "./Reader.css";
 import ReaderComments from "./ReaderComments/ReaderComments";
-import ReaderPost, { PostProps } from "./ReaderPost/ReaderPost";
+import ReaderPost from "./ReaderPost/ReaderPost";
 
 const Reader = (props: Post) => {
   const commentsStatus = useAppSelector(selectCommentsStatus);
