@@ -1,12 +1,18 @@
 import { Request, Response } from "express";
-import { fetchTopStories } from "../services/feedService";
-import { fetchItemById } from "../services/itemService";
+import {
+  fetchTopStories,
+  fetchNewStories,
+  fetchBestStories,
+  fetchAskStories,
+  fetchShowStories,
+  fetchJobStories,
+} from "../services/feedService";
 
 export default class FeedController {
-  getTop500Ids = (req: Request, res: Response) => {
+  getTop500Ids = (res: Response) => {
     fetchTopStories()
       .then((data) => {
-        // console.log("FeedController - Get Top 500 Ids");
+        // console.log("FeedController - Get 500 TOp Ids");
         res.status(200).send(data);
       })
       .catch((error) => {
@@ -14,14 +20,58 @@ export default class FeedController {
       });
   };
 
-  // TODO: Implement these
-  getNew500Ids = (req: Request, res: Response) => {};
+  getNew500Ids = (req: Request, res: Response) => {
+    fetchNewStories()
+      .then((data) => {
+        // console.log("FeedController - Get 500 New Ids");
+        res.status(200).send(data);
+      })
+      .catch((error) => {
+        res.status(500).send(error);
+      });
+  };
 
-  getBest500Ids = (req: Request, res: Response) => {};
+  getBest500Ids = (req: Request, res: Response) => {
+    fetchBestStories()
+      .then((data) => {
+        // console.log("FeedController - Get 500 Best Ids");
+        res.status(200).send(data);
+      })
+      .catch((error) => {
+        res.status(500).send(error);
+      });
+  };
 
-  getAsk200Ids = (req: Request, res: Response) => {};
+  getAsk200Ids = (req: Request, res: Response) => {
+    fetchAskStories()
+      .then((data) => {
+        // console.log("FeedController - Get 200 Ask Ids");
+        res.status(200).send(data);
+      })
+      .catch((error) => {
+        res.status(500).send(error);
+      });
+  };
 
-  getShow200Ids = (req: Request, res: Response) => {};
+  getShow200Ids = (req: Request, res: Response) => {
+    fetchJobStories()
+      .then((data) => {
+        // console.log("FeedController - Get 500 Show Ids");
+        res.status(200).send(data);
+      })
+      .catch((error) => {
+        res.status(500).send(error);
+      });
+  };
 
-  getJob200Ids = (req: Request, res: Response) => {};
+  getJob200Ids = (req: Request, res: Response) => {
+    fetchJobStories()
+      .then((data) => {
+        // console.log("FeedController - Get 200 Job Ids");
+        res.status(200).send(data);
+      })
+      .catch((error) => {
+        res.status(500).send(error);
+      });
+  };
 }
