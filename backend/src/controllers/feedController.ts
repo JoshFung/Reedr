@@ -9,7 +9,7 @@ import {
 } from "../services/feedService";
 
 export default class FeedController {
-  getTop500Ids = (res: Response) => {
+  getTop500Ids = (req: Request, res: Response) => {
     fetchTopStories()
       .then((data) => {
         // console.log("FeedController - Get 500 TOp Ids");
@@ -54,7 +54,7 @@ export default class FeedController {
   };
 
   getShow200Ids = (req: Request, res: Response) => {
-    fetchJobStories()
+    fetchShowStories()
       .then((data) => {
         // console.log("FeedController - Get 500 Show Ids");
         res.status(200).send(data);
