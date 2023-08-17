@@ -7,6 +7,7 @@ import parse from "html-react-parser";
 import { useEffect, useState } from "react";
 import { FillerCardEnum } from "../../utils/enums";
 import FillerCard from "../FillerCard/FillerCard";
+import DepthBar from "../DepthBar/DepthBar";
 
 interface CommentCardProps {
   comment: Comment;
@@ -38,11 +39,9 @@ const CommentCard = (props: CommentCardProps) => {
     }
   }, [showChildren]);
 
-  // if (kids && directChildren !== 0) {
   const loadCommentCards = childrenComments.map((comment) => {
     return <CommentCard key={comment.id} comment={comment} depth={depth + 1} />;
   });
-  // }
 
   return (
     <div className="comment-chain-container">
@@ -54,6 +53,7 @@ const CommentCard = (props: CommentCardProps) => {
           }
         }}
       >
+        <DepthBar depth={depth} />
         <div className="comment">
           <div className="comment-content">
             <p className="comment-text">{convertText(text)}</p>

@@ -1,0 +1,13 @@
+.depth-bar-container {
+  /* height: 100%; */
+  display: flex;
+  flex: 1;
+  margin-right: 0.75rem;
+}
+
+.depth-bar {
+  width: 0.0625rem;
+  height: 100%;
+  /* width: 10rem; */
+  /* background-color: red; */
+}

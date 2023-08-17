@@ -1,4 +1,5 @@
 import { BarColourEnum, FillerCardEnum } from "../../utils/enums";
+import DepthBar from "../DepthBar/DepthBar";
 import "./FillerCard.css";
 
 interface FillerCardProps {
@@ -52,9 +53,7 @@ const FillerCard = (props: FillerCardProps) => {
 
       return (
         <div className="show-children-container" onClick={onClick}>
-          <div className="depth-bar-container" style={indentStyle}>
-            <div className="depth-bar" style={barColourStyle}></div>
-          </div>
+          <DepthBar depth={depth} />
           <h4 className="show-children-text">{message}</h4>
         </div>
       );
