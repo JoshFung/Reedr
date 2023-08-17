@@ -33,18 +33,21 @@ const initialState: FeedState = {
   error: null,
 };
 
-export const fetchPostsIds = createAsyncThunk<number[]>(
-  "feed/fetchPostsIds",
-  async () => {
-    const apiUrl = process.env.REACT_APP_API_URL;
-    try {
-      const response = await axios.get(`${apiUrl}/Top500Ids`);
-      return response.data;
-    } catch {
-      throw Error("Error fetching post IDs");
-    }
+export const fetchPostsIds = createAsyncThunk<
+  number[],
+  void,
+  { state: RootState }
+>("feed/fetchPostsIds", async (_, { getState }) => {
+  const apiUrl = process.env.REACT_APP_API_URL;
+  const state = getState();
+  const { feedMode } = state.feed;
+  try {
+    const response = await axios.get(`${apiUrl}/${feedMode}Ids`);
+    return response.data;
+  } catch {
+    throw Error("Error fetching post IDs");
   }
-);
+});
 
 export const fetchPosts = createAsyncThunk<Post[], void, { state: RootState }>(
   "feed/fetchFiftyPosts",
@@ -76,10 +79,15 @@ const feedSlice = createSlice({
   initialState,
   reducers: {
     setFeedMode: (state, action: { payload: FeedModeEnum }) => {
-      state.feedMode = action.payload;
+      if (state.feedMode !== action.payload) {
+        state.feedMode = action.payload;
+        state.postsArray = [];
+        state.idStatus = StatusEnum.IDLE;
+        state.postStatus = StatusEnum.IDLE;
 
-      // reset to only having 50 posts if we change
-      state.maxFeedSize = 0;
+        // reset to only having 50 posts if we change
+        state.maxFeedSize = 0;
+      }
     },
     incrementMaxFeedSize: (state) => {
       state.maxFeedSize += 50;
