@@ -1,10 +1,10 @@
 import { Icon } from "@iconify/react";
 import { Comment } from "../../redux/slices/post/postSlice";
-import { timeDifference } from "../../utils/helpers";
+import { fetchCommentsHelper, timeDifference } from "../../utils/helpers";
 import "./CommentCard.css";
 import he from "he";
 import parse from "html-react-parser";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FillerCardEnum } from "../../utils/enums";
 import FillerCard from "../FillerCard/FillerCard";
 
@@ -20,6 +20,7 @@ const CommentCard = (props: CommentCardProps) => {
   const directChildren = kids?.length ?? 0;
 
   const [showChildren, setShowChildren] = useState(false);
+  const [childrenComments, setChildrenComments] = useState<Comment[]>([]);
 
   const convertText = (text: string) => {
     const convertChars = he.decode(text);
@@ -29,9 +30,30 @@ const CommentCard = (props: CommentCardProps) => {
 
   const loadChildrenText = `Load ${directChildren} more comments`;
 
+  useEffect(() => {
+    if (kids) {
+      fetchCommentsHelper(kids).then((childrenComments) => {
+        setChildrenComments(childrenComments);
+      });
+    }
+  }, [showChildren]);
+
+  // if (kids && directChildren !== 0) {
+  const loadCommentCards = childrenComments.map((comment) => {
+    return <CommentCard key={comment.id} comment={comment} depth={depth + 1} />;
+  });
+  // }
+
   return (
-    <>
-      <div className="comment-container">
+    <div className="comment-chain-container">
+      <div
+        className="comment-container"
+        onClick={() => {
+          if (showChildren) {
+            setShowChildren(!showChildren);
+          }
+        }}
+      >
         <div className="comment">
           <div className="comment-content">
             <p className="comment-text">{convertText(text)}</p>
@@ -41,7 +63,7 @@ const CommentCard = (props: CommentCardProps) => {
                 <span>{` ${by} `}</span>
                 {`${convertedTime} ago`}
               </div>
-              <div className="comment-children">
+              <div className="comment-children-info">
                 <Icon
                   icon="mdi:comment-outline"
                   width="8"
@@ -57,17 +79,18 @@ const CommentCard = (props: CommentCardProps) => {
       {directChildren === 0 ? null : (
         <div className="comment-children-container">
           {showChildren ? (
-            <div className="comment-children"></div>
+            <div className="comment-children">{loadCommentCards}</div>
           ) : (
             <FillerCard
               type={FillerCardEnum.SHOW_CHILDREN}
               depth={depth}
               message={loadChildrenText}
+              onClick={() => setShowChildren(!showChildren)}
             />
           )}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

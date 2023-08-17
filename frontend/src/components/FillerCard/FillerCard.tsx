@@ -5,10 +5,11 @@ interface FillerCardProps {
   type: FillerCardEnum;
   message?: string;
   depth?: number;
+  onClick?: () => void;
 }
 
 const FillerCard = (props: FillerCardProps) => {
-  const { type, message, depth } = props;
+  const { type, message, depth, onClick } = props;
 
   switch (type) {
     case FillerCardEnum.BOTTOM_MESSAGE:
@@ -50,7 +51,7 @@ const FillerCard = (props: FillerCardProps) => {
       };
 
       return (
-        <div className="show-children-container">
+        <div className="show-children-container" onClick={onClick}>
           <div className="depth-bar-container" style={indentStyle}>
             <div className="depth-bar" style={barColourStyle}></div>
           </div>

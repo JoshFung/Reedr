@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 import { StatusEnum } from "../../../utils/enums";
 import axios from "axios";
+import { fetchCommentsHelper } from "../../../utils/helpers";
 
 export interface Post {
   id: number;
@@ -59,31 +60,14 @@ export const fetchComments = createAsyncThunk<
   void,
   { state: RootState }
 >("post/fetchComments", async (_, { getState }) => {
-  const apiUrl = process.env.REACT_APP_API_URL;
   const state = getState();
   const { selectedPost } = state.posts;
 
-  if (!selectedPost || !selectedPost.kids) {
-    return [];
+  if (selectedPost && selectedPost.kids) {
+    return await fetchCommentsHelper(selectedPost.kids);
   }
 
-  try {
-    const response = await Promise.all<Comment>(
-      selectedPost.kids.map(async (id: number) => {
-        const response = await axios.get(`${apiUrl}/item/comment/${id}`);
-        const responseData = response.data;
-        if (responseData && !responseData.dead && !responseData.deleted) {
-          return responseData;
-        }
-      })
-    );
-
-    const data = response.filter((res) => res !== null && res !== undefined);
-
-    return data;
-  } catch {
-    throw Error("Failed to fetch comments");
-  }
+  return [];
 });
 
 const postSlice = createSlice({
