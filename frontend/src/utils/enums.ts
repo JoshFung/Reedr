@@ -12,11 +12,12 @@ export enum FillerCardEnum {
   SHOW_CHILDREN,
 }
 
+// BLUE = 0 because depth = 0 we have no bar but depth = 6 we should have blue bar
 export enum BarColourEnum {
+  BLUE,
   RED,
   ORANGE,
   YELLOW,
   GREEN,
   TEAL,
-  BLUE,
 }

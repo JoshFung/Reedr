@@ -1,17 +1,19 @@
 .comment-chain-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .comment-container {
   border-bottom: 0.0625rem solid #dee2e6;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  flex: 1;
+  padding: 0.25rem 0.75rem 0.25rem 0.75rem;
 }
 
 .comment {
-  margin: 0.25rem 0.75rem 0.25rem 0.75rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -72,14 +74,12 @@
 
 .comment-children-container {
   display: flex;
-  flex-grow: 1;
+  flex-direction: column;
   border-bottom: 0.0625rem solid #dee2e6;
 }
 
 .comment-children {
   display: flex;
   flex-direction: column;
-}
-
-.show-children-button {
+  height: 100%;
 }

@@ -83,7 +83,7 @@ const CommentCard = (props: CommentCardProps) => {
           ) : (
             <FillerCard
               type={FillerCardEnum.SHOW_CHILDREN}
-              depth={depth}
+              depth={depth + 1}
               message={loadChildrenText}
               onClick={() => setShowChildren(!showChildren)}
             />
