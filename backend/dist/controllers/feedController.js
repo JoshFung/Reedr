@@ -6,7 +6,7 @@ class FeedController {
         this.getTop500Ids = (req, res) => {
             (0, feedService_1.fetchTopStories)()
                 .then((data) => {
-                // console.log("FeedController - Get 500 TOp Ids");
+                // console.log("FeedController - Get 500 Top Ids");
                 res.status(200).send(data);
             })
                 .catch((error) => {
