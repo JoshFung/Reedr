@@ -1,4 +1,4 @@
-import { timeDifference } from "../../../utils/helpers";
+import { parseText, timeDifference } from "../../../utils/helpers";
 import "./ReaderPost.css";
 import { Icon } from "@iconify/react";
 
@@ -13,14 +13,19 @@ export interface PostProps {
 }
 
 const ReaderPost = (props: PostProps) => {
-  const { title, by, time, url, score, descendants } = props;
+  const { title, by, time, url, score, text, descendants } = props;
   const convertedTime = timeDifference(time, true);
-  let domain;
+
+  let domain, convertedText;
 
   if (url) {
     // Source: https://stackoverflow.com/a/8498629/16217105
     const matches = url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
     domain = matches && matches[1];
+  }
+
+  if (text) {
+    convertedText = parseText(text);
   }
 
   const openLink = (url: string | undefined) => {
@@ -33,6 +38,7 @@ const ReaderPost = (props: PostProps) => {
     <div className="post-container">
       <div className="post-main" onClick={() => openLink(url)}>
         <h2 className="post-title">{title}</h2>
+        {convertedText && <p className="post-text">{convertedText}</p>}
         <div className="post-main-info-container">
           <div className="post-main-info">
             By
