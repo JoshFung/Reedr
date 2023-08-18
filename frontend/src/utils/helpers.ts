@@ -1,4 +1,6 @@
 import axios from "axios";
+import he from "he";
+import parse from "html-react-parser";
 import { Comment } from "../redux/slices/post/postSlice";
 
 export const timeDifference = (time: number, forReader: boolean) => {
@@ -63,4 +65,10 @@ export const fetchCommentsHelper = async (ids: number[]) => {
   } catch {
     throw Error("Failed to fetch comments");
   }
+};
+
+export const parseText = (text: string) => {
+  const convertChars = he.decode(text);
+  const convertTags = convertChars.replace(/<p>/g, "\n\n");
+  return parse(convertTags);
 };

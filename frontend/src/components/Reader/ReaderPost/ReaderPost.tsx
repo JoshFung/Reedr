@@ -7,6 +7,7 @@ export interface PostProps {
   by: string;
   time: number;
   url?: string;
+  text?: string;
   score: number;
   descendants?: number;
 }

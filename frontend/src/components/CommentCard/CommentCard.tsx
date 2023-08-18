@@ -1,9 +1,11 @@
 import { Icon } from "@iconify/react";
 import { Comment } from "../../redux/slices/post/postSlice";
-import { fetchCommentsHelper, timeDifference } from "../../utils/helpers";
+import {
+  fetchCommentsHelper,
+  parseText,
+  timeDifference,
+} from "../../utils/helpers";
 import "./CommentCard.css";
-import he from "he";
-import parse from "html-react-parser";
 import { useEffect, useState } from "react";
 import { FillerCardEnum } from "../../utils/enums";
 import FillerCard from "../FillerCard/FillerCard";
@@ -19,15 +21,10 @@ const CommentCard = (props: CommentCardProps) => {
   const { depth } = props;
   const convertedTime = timeDifference(time, true);
   const directChildren = kids?.length ?? 0;
+  const convertedText = parseText(text);
 
   const [showChildren, setShowChildren] = useState(false);
   const [childrenComments, setChildrenComments] = useState<Comment[]>([]);
-
-  const convertText = (text: string) => {
-    const convertChars = he.decode(text);
-    const convertTags = convertChars.replace(/<p>/g, "\n\n");
-    return parse(convertTags);
-  };
 
   const loadChildrenText = `Load ${directChildren} more comments`;
 
@@ -56,7 +53,7 @@ const CommentCard = (props: CommentCardProps) => {
         <DepthBar depth={depth} />
         <div className="comment">
           <div className="comment-content">
-            <p className="comment-text">{convertText(text)}</p>
+            <p className="comment-text">{convertedText}</p>
             <div className="comment-info">
               <div className="comment-author-date">
                 By
