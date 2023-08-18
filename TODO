@@ -1,0 +1,28 @@
+@critical Priority:
+  ✔ Infinite scroll -> only grab 50 posts (even though we have ID of 500) @done(23-08-18 16:23)
+  ☐ Add more tabs in header to select different feed modes
+    ☐ Make a carousel? -> Double arrow pointing right from 'Reedr' title that show the carousel on hover
+  ✔ Convert HTML entities (`&quot;`) into proper character (`"`) @done(23-08-18 16:26)
+  ✔ Handle HN text posts -> Some of the normal posts also have text underneath @done(23-08-18 16:27)
+  ✔ Spinner when: @done(23-08-18 16:28)
+    ✔ Loading comments @done(23-08-18 16:28)
+    ✔ Loading posts @done(23-08-18 16:28)
+   
+
+@high Priority:
+  ✔ How should posts display the url link? (ex. www.github.com) @done(23-08-18 16:23)
+  ✔ Header is NOT remaining sticky @done(23-08-18 16:24)
+  ✔ Make scrollbar invisible @done(23-08-18 16:24)
+  ✔ Install Inter font (not from google fonts) -> More updated with italics @done(23-08-18 16:26)
+  ☐ Show markdown within comments
+  ☐ Links within a comment should also appear as boxes that open to the link at the bottom of the comment
+
+@low Priority:
+  ☐ Improve `timeDifference` helper function
+  ☐ Look to refactor CSS classes -> Potentially lots of repeated code
+  
+Bug Fixes:
+  ✔ Scrollbar isn't showing up in correct container for feed @done(23-08-18 16:25)
+    ✔ Goes over header @done(23-08-18 16:25)
+    ✔ Becomes very large when fetching @done(23-08-18 16:25)
+  ☐ Last comment card has `border-bottom` showing through parent container
