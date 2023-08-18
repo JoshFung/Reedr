@@ -22,8 +22,8 @@ const PostCard = (props: Post) => {
         <div className="postcard-info-piece">
           <Icon
             icon="mdi:arrow-up-bold-outline"
-            width="12"
-            height="12"
+            width="0.75rem"
+            height="0.75rem"
             className="postcard-info-icon"
           />
           {score.toString()}
@@ -31,8 +31,8 @@ const PostCard = (props: Post) => {
         <div className="postcard-info-piece">
           <Icon
             icon="mdi:comment-outline"
-            width="12"
-            height="12"
+            width="0.75rem"
+            height="0.75rem"
             className="postcard-info-icon"
           />
           {descendants ?? 0}
@@ -40,8 +40,8 @@ const PostCard = (props: Post) => {
         <div className="postcard-info-piece">
           <Icon
             icon="mdi:clock-outline"
-            width="12"
-            height="12"
+            width="0.75rem"
+            height="0.75rem"
             className="postcard-info-icon"
           />
           {convertedTime}
@@ -49,8 +49,8 @@ const PostCard = (props: Post) => {
         <div className="postcard-info-piece">
           <Icon
             icon="mdi:account-outline"
-            width="12"
-            height="12"
+            width="0.75rem"
+            height="0.75rem"
             className="postcard-info-icon"
           />
           {by}

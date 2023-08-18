@@ -49,8 +49,8 @@ const ReaderPost = (props: PostProps) => {
             <div className="post-main-link">
               <Icon
                 icon="mdi:link-variant"
-                width="12"
-                height="12"
+                width="0.75rem"
+                height="0.75rem"
                 className="post-main-link-icon"
               />
               ({domain})
@@ -66,8 +66,8 @@ const ReaderPost = (props: PostProps) => {
         <div className="post-bottom-info">
           <Icon
             icon="mdi:arrow-up-bold-outline"
-            width="16"
-            height="16"
+            width="1rem"
+            height="1rem"
             className="post-bottom-info-icon"
           />
           {score}
@@ -75,8 +75,8 @@ const ReaderPost = (props: PostProps) => {
         <div className="post-bottom-info">
           <Icon
             icon="mdi:comment-outline"
-            width="16"
-            height="16"
+            width="1rem"
+            height="1rem"
             className="post-bottom-info-icon"
           />
           {descendants ?? 0}
@@ -84,8 +84,8 @@ const ReaderPost = (props: PostProps) => {
         <div className="post-bottom-info">
           <Icon
             icon="mdi:share-outline"
-            width="16"
-            height="16"
+            width="1rem"
+            height="1rem"
             className="post-bottom-info-icon"
           />
           Share

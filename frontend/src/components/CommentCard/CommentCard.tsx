@@ -63,8 +63,8 @@ const CommentCard = (props: CommentCardProps) => {
               <div className="comment-children-info">
                 <Icon
                   icon="mdi:comment-outline"
-                  width="8"
-                  height="8"
+                  width="0.5rem"
+                  height="0.5rem"
                   className="comment-children-icon"
                 />
                 {directChildren}

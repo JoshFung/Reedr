@@ -7,6 +7,7 @@
   ✔ Spinner when: @done(23-08-18 16:28)
     ✔ Loading comments @done(23-08-18 16:28)
     ✔ Loading posts @done(23-08-18 16:28)
+  ☐ Mobile and web friendly -> Able to scale
    
 
 @high Priority:
@@ -16,13 +17,27 @@
   ✔ Install Inter font (not from google fonts) -> More updated with italics @done(23-08-18 16:26)
   ☐ Show markdown within comments
   ☐ Links within a comment should also appear as boxes that open to the link at the bottom of the comment
+  ☐ Update figma designs
+    ☐ Add more styling -> Especially colour...
+    ☐ Make sure they reflect same design
 
 @low Priority:
   ☐ Improve `timeDifference` helper function
   ☐ Look to refactor CSS classes -> Potentially lots of repeated code
+  ☐ Remove excessive comments (entire project)
+  ☐ Remove unnecessary imports (entire project)
   
 Bug Fixes:
   ✔ Scrollbar isn't showing up in correct container for feed @done(23-08-18 16:25)
     ✔ Goes over header @done(23-08-18 16:25)
     ✔ Becomes very large when fetching @done(23-08-18 16:25)
   ☐ Last comment card has `border-bottom` showing through parent container
+  ✔ Icons should be sized using `rem` rather than `px` @done(23-08-18 16:57)
+
+Things to consider:
+  ☐ Delete `commentsSlice.ts` if not needed
+  ☐ See if we can improve rendering time
+  ☐ See if we can improve fetching time
+    ☐ Do we need to fetch 50 posts at once? Maybe reduce to 30?
+    ☐ Do we need to fetch all comments at once?
+      ☐ Should we rather fetch `x` amount of comments, as well as few children comments for each?
