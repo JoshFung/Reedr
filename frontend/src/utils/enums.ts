@@ -5,6 +5,15 @@ export enum StatusEnum {
   FAILED,
 }
 
+export enum FeedModeEnum {
+  TOP = "top",
+  NEW = "new",
+  BEST = "best",
+  ASK = "ask",
+  SHOW = "show",
+  JOB = "job",
+}
+
 export enum FillerCardEnum {
   // INVALID = -1,
   BOTTOM_MESSAGE,
