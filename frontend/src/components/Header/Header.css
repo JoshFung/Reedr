@@ -1,9 +1,11 @@
 .header-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  width: calc(100vw - 1rem);
   height: 10vh;
+  margin: 0 0.5rem 0 0.5rem;
   border-bottom: 2px solid #ced4da;
   position: sticky;
   top: 0;
@@ -11,15 +13,26 @@
 }
 
 .header-title {
-  margin: 0 0 0 0.75rem;
+  margin: 0 2rem 0 0;
   font-weight: 900;
   font-size: 3rem;
 }
 
-.header-link-list {
+.header-feed-list {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  padding: 0;
+  list-style-type: none;
+  overflow: scroll;
+  padding-inline: 0 0;
+  margin-block: 0 0;
+  margin-inline: 0 0;
+  gap: 0.75rem;
+}
+
+.header-feed-list::-webkit-scrollbar {
+  display: none;
 }
 
 .header-link {
@@ -28,9 +41,5 @@
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
-  margin-right: 0.75rem;
+  flex: 1;
 }
-
-/* .headerHomeIcon {
-  transform: translateY(5px);
-} */

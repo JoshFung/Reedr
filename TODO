@@ -1,7 +1,7 @@
 @critical Priority:
   ✔ Infinite scroll -> only grab 50 posts (even though we have ID of 500) @done(23-08-18 16:23)
-  ☐ Add more tabs in header to select different feed modes
-    ☐ Make a carousel? -> Double arrow pointing right from 'Reedr' title that show the carousel on hover
+  ✔ Add more tabs in header to select different feed modes @done(23-08-18 19:32)
+    ✘ Make a carousel? -> Double arrow pointing right from 'Reedr' title that show the carousel on hover @cancelled(23-08-18 19:32)
   ✔ Convert HTML entities (`&quot;`) into proper character (`"`) @done(23-08-18 16:26)
   ✔ Handle HN text posts -> Some of the normal posts also have text underneath @done(23-08-18 16:27)
   ✔ Spinner when: @done(23-08-18 16:28)
@@ -35,6 +35,7 @@ Bug Fixes:
   ✔ Icons should be sized using `rem` rather than `px` @done(23-08-18 16:57)
 
 Things to consider:
+  ☐ Use Firebase client library to access HN API
   ☐ Delete `commentsSlice.ts` if not needed
   ☐ See if we can improve rendering time
   ☐ See if we can improve fetching time
