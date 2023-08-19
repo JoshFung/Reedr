@@ -2,11 +2,12 @@ import "./Header.css";
 import { Icon } from "@iconify/react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { setFeedMode } from "../../redux/slices/feed/feedSlice";
-import { FeedModeEnum } from "../../redux/slices/feed/FeedModeEnum";
+
 import {
   selectSelectedPost,
   setNoPost,
 } from "../../redux/slices/post/postSlice";
+import { FeedModeEnum } from "../../utils/enums";
 
 const Header = () => {
   const dispatch = useAppDispatch();
