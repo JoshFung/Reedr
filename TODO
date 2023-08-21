@@ -44,3 +44,4 @@ Things to consider:
     ☐ Do we need to fetch 50 posts at once? Maybe reduce to 30?
     ☐ Do we need to fetch all comments at once?
       ☐ Should we rather fetch `x` amount of comments, as well as few children comments for each?
+  ✔ Refactor CSS class names to not use camel case @done(23-08-21 15:58)

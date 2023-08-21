@@ -1,4 +1,4 @@
-.feedContainer {
+.feed-container {
   height: 100%;
   width: 100vw;
   display: flex;
@@ -9,7 +9,7 @@
   overflow-y: auto;
 }
 
-.feedContainer::-webkit-scrollbar {
+.feed-container::-webkit-scrollbar {
   width: 0;
 }
 

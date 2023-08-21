@@ -43,7 +43,7 @@ const Feed = () => {
   });
 
   return (
-    <div className="feedContainer">
+    <div className="feed-container">
       {postIdsStatus !== StatusEnum.SUCCEEDED ||
       (postsStatus !== StatusEnum.SUCCEEDED && postsArray.length < 50) ? (
         <Spinner />

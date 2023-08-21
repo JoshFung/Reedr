@@ -8,7 +8,7 @@ const ContentPage = () => {
   const selectedPost = useAppSelector(selectSelectedPost);
 
   return (
-    <div className="contentContainer">
+    <div className="content-container">
       {selectedPost ? <Reader {...selectedPost} /> : <Feed />}
     </div>
   );
