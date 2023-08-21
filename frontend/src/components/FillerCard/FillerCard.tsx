@@ -32,7 +32,6 @@ const FillerCard = (props: FillerCardProps) => {
         return null;
       }
 
-      // TODO: all unnecessary?
       const colourMapping: { [key in BarColourEnum]: string } = {
         [BarColourEnum.RED]: "#F94144",
         [BarColourEnum.ORANGE]: "#F8961E",
