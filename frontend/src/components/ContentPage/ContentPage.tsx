@@ -9,6 +9,17 @@ const ContentPage = () => {
 
   return (
     <div className="content-container">
+      {/* <div className="mobile-container">
+        {selectedPost ? <Reader {...selectedPost} /> : <Feed />}
+      </div>
+      <div className="web-container">
+        <div className="feed-column">
+          <Feed />
+        </div>
+        <div className="reader-column">
+          {selectedPost && <Reader {...selectedPost} />}
+        </div>
+      </div> */}
       {selectedPost ? <Reader {...selectedPost} /> : <Feed />}
     </div>
   );
