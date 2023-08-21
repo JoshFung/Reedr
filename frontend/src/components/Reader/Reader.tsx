@@ -4,6 +4,7 @@ import {
   Post,
   fetchComments,
   selectCommentsStatus,
+  selectSelectedPost,
 } from "../../redux/slices/post/postSlice";
 import { StatusEnum } from "../../utils/enums";
 import "./Reader.css";
@@ -13,7 +14,15 @@ import Spinner from "../Spinner/Spinner";
 
 const Reader = (props: Post) => {
   const commentsStatus = useAppSelector(selectCommentsStatus);
+  const selectedPost = useAppSelector(selectSelectedPost);
   const dispatch = useAppDispatch();
+  let readerStyles: React.CSSProperties;
+
+  if (selectedPost) {
+    readerStyles = {};
+  } else {
+    readerStyles = {};
+  }
 
   useEffect(() => {
     if (commentsStatus === StatusEnum.IDLE) {
