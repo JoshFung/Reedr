@@ -58,14 +58,16 @@ const Feed = () => {
               message={"Loading more reeds... 🫧"}
             />
           }
-          scrollThreshold="80%"
+          scrollThreshold="0.2"
           endMessage={
             <FillerCard
               type={FillerCardEnum.BOTTOM_MESSAGE}
               message={"No more reeds! 🌊"}
             />
           }
-          scrollableTarget="topContentContainer" // from ContentPage -- Allows us to scroll to load more posts
+          height="90vh"
+          // scrollableTarget="feedContainer" // from ContentPage -- Allows us to scroll to load more posts
+          className="infinite-scroll"
         >
           {renderPostCards}
         </InfiniteScroll>
