@@ -24,9 +24,7 @@ const Reader = (props: Post) => {
   return (
     <div className="reader-container">
       {commentsStatus !== StatusEnum.SUCCEEDED ? (
-        <div className="spinner-container">
-          <Spinner />
-        </div>
+        <Spinner />
       ) : (
         <div className="reader-content">
           <ReaderPost {...props} />
