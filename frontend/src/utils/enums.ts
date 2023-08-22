@@ -19,6 +19,7 @@ export enum FillerCardEnum {
   BOTTOM_MESSAGE,
   NO_COMMENTS,
   SHOW_CHILDREN,
+  NO_SELECTED_POST,
 }
 
 // BLUE = 0 because depth = 0 we have no bar but depth = 6 we should have blue bar

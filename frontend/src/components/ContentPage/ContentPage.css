@@ -5,10 +5,43 @@
   flex-direction: column;
   justify-content: center;
   flex: 1;
-  /* align-items: center; */
   overflow-y: auto;
 }
 
 .content-container::-webkit-scrollbar {
   width: 0;
+}
+
+.mobile-container {
+  width: 100%;
+  display: none;
+}
+
+.web-container {
+  width: 100%;
+  display: none;
+}
+
+/* FOR PHONES */
+@media screen and (max-width: 767px) {
+  .mobile-container {
+    display: flex;
+  }
+}
+
+/* FOR TABLETS AND BIGGER */
+@media screen and (min-width: 768px) {
+  .web-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .feed-column {
+    flex: 1;
+  }
+
+  .reader-column {
+    flex: 1;
+  }
 }

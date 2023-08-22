@@ -1,3 +1,4 @@
+import { Icon } from "@iconify/react";
 import { BarColourEnum, FillerCardEnum } from "../../utils/enums";
 import DepthBar from "../DepthBar/DepthBar";
 import "./FillerCard.css";
@@ -36,6 +37,19 @@ const FillerCard = (props: FillerCardProps) => {
         <div className="show-children-container" onClick={onClick}>
           <DepthBar depth={depth} />
           <h4 className="show-children-text">{message}</h4>
+        </div>
+      );
+
+    case FillerCardEnum.NO_SELECTED_POST:
+      return (
+        <div className="no-selected-post-container">
+          <Icon
+            icon="ic:outline-bubble-chart"
+            // width="1rem"
+            // height="1rem"
+            className="bubble-icon"
+          />
+          <h3 className="no-selected-post-text">Reeds will open here!</h3>
         </div>
       );
 

@@ -7,8 +7,8 @@
   ✔ Spinner when: @done(23-08-18 16:28)
     ✔ Loading comments @done(23-08-18 16:28)
     ✔ Loading posts @done(23-08-18 16:28)
-  ☐ Mobile and web friendly -> Able to scale
-   
+  ☐ Mobile and web friendly -> Able to scale 
+
 
 @high Priority:
   ✔ How should posts display the url link? (ex. www.github.com) @done(23-08-18 16:23)
@@ -21,6 +21,7 @@
     ☐ Add more styling -> Especially colour...
     ☐ Make sure they reflect same design
   ✔ Refactor infinite scroll to not use topContentContainer @done(23-08-21 15:56)
+  ☐ Post cards aren't full width when screen size is larger
 
 @low Priority:
   ☐ Improve `timeDifference` helper function

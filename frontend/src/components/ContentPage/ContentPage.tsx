@@ -1,6 +1,8 @@
 import { useAppSelector } from "../../redux/hooks";
 import { selectSelectedPost } from "../../redux/slices/post/postSlice";
+import { FillerCardEnum } from "../../utils/enums";
 import Feed from "../Feed/Feed";
+import FillerCard from "../FillerCard/FillerCard";
 import Reader from "../Reader/Reader";
 import "./ContentPage.css";
 
@@ -9,7 +11,7 @@ const ContentPage = () => {
 
   return (
     <div className="content-container">
-      {/* <div className="mobile-container">
+      <div className="mobile-container">
         {selectedPost ? <Reader {...selectedPost} /> : <Feed />}
       </div>
       <div className="web-container">
@@ -17,10 +19,16 @@ const ContentPage = () => {
           <Feed />
         </div>
         <div className="reader-column">
-          {selectedPost && <Reader {...selectedPost} />}
+          {selectedPost ? (
+            <Reader {...selectedPost} />
+          ) : (
+            <FillerCard type={FillerCardEnum.NO_SELECTED_POST} />
+          )}
         </div>
-      </div> */}
-      {selectedPost ? <Reader {...selectedPost} /> : <Feed />}
+      </div>
+
+      {/* BEFORE TRYING TO MAKE PC FRIENDLY */}
+      {/* {selectedPost ? <Reader {...selectedPost} /> : <Feed />} */}
     </div>
   );
 };

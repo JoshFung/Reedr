@@ -9,6 +9,7 @@
   /* x-offset | y-offset | blur radius | spread radius | colour */
   box-shadow: -0.25rem 0.25rem 0.25rem 0rem #343a40;
   height: 7vh;
+  background-color: #f8f9fa;
 }
 
 .postcard-container:hover {

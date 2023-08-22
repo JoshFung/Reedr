@@ -1,9 +1,7 @@
-/*
-* BOTTOM MESSAGE
-*/
+/* BOTTOM MESSAGE */
 
 .bottom-message-container {
-  background: rgb(248, 249, 250);
+  /* background: rgb(248, 249, 250); */
   background: linear-gradient(
     180deg,
     rgba(248, 249, 250, 1) 0%,
@@ -23,9 +21,7 @@
   font-size: 1.25rem;
 }
 
-/*
-* NO COMMENTS
-*/
+/* NO COMMENTS */
 
 .no-comments-container {
   display: flex;
@@ -41,9 +37,7 @@
   color: #014f86;
 }
 
-/*
-* SHOW CHILDREN BUTTON
-*/
+/* SHOW CHILDREN BUTTON */
 
 .show-children-container {
   display: flex;
@@ -58,4 +52,28 @@
   margin: 0 0 0 0;
   font-size: 0.5rem;
   font-weight: 200;
+}
+
+/* NO SELECTED POST */
+.no-selected-post-container {
+  height: 100%;
+  width: 100%;
+  background-color: #ced4da;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bubble-icon {
+  color: #6c757d;
+  height: 6rem;
+  width: 6rem;
+}
+
+.no-selected-post-text {
+  font-weight: 800;
+  font-size: 2rem;
+  color: #6c757d;
+  margin: 0 0 0 0;
 }
