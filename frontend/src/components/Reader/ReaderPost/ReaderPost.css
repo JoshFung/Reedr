@@ -60,6 +60,8 @@
 
 .post-main-link-icon {
   color: #a9d6e5;
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 /* --- */
@@ -92,6 +94,8 @@
 
 .post-bottom-info-icon {
   color: #adb5bd;
+  width: 1rem;
+  height: 1rem;
 }
 
 .post-bottom-info:nth-child(n + 2) {

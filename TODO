@@ -8,6 +8,8 @@
     ✔ Loading comments @done(23-08-18 16:28)
     ✔ Loading posts @done(23-08-18 16:28)
   ☐ Mobile and web friendly -> Able to scale 
+    ☐ Post cards aren't full width when screen size is larger
+    ☐ REM value should change based on screen size
 
 
 @high Priority:
@@ -21,13 +23,13 @@
     ☐ Add more styling -> Especially colour...
     ☐ Make sure they reflect same design
   ✔ Refactor infinite scroll to not use topContentContainer @done(23-08-21 15:56)
-  ☐ Post cards aren't full width when screen size is larger
 
 @low Priority:
   ☐ Improve `timeDifference` helper function
   ☐ Look to refactor CSS classes -> Potentially lots of repeated code
   ☐ Remove excessive comments (entire project)
   ☐ Remove unnecessary imports (entire project)
+  ✔ Icons should not have inline sizing, use CSS files to size @done(23-08-21 17:36)
   
 Bug Fixes:
   ✔ Scrollbar isn't showing up in correct container for feed @done(23-08-18 16:25)
@@ -35,6 +37,7 @@ Bug Fixes:
     ✔ Becomes very large when fetching @done(23-08-18 16:25)
   ☐ Last comment card has `border-bottom` showing through parent container
   ✔ Icons should be sized using `rem` rather than `px` @done(23-08-18 16:57)
+  ☐ Spinner colour needs to be changed, so it works with background colours
 
 Things to consider:
   ☐ Use Firebase client library to access HN API

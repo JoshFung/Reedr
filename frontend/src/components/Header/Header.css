@@ -43,3 +43,8 @@
   gap: 0.25rem;
   flex: 1;
 }
+
+.header-link-icon {
+  width: 1rem;
+  height: 1rem;
+}

@@ -48,5 +48,7 @@
 
 .postcard-info-icon {
   color: #adb5bd;
+  width: 0.75rem;
+  height: 0.75rem;
   /* color: hsl(210, 11%, 71%); */
 }

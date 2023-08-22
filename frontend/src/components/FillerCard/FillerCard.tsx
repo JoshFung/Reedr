@@ -43,12 +43,7 @@ const FillerCard = (props: FillerCardProps) => {
     case FillerCardEnum.NO_SELECTED_POST:
       return (
         <div className="no-selected-post-container">
-          <Icon
-            icon="ic:outline-bubble-chart"
-            // width="1rem"
-            // height="1rem"
-            className="bubble-icon"
-          />
+          <Icon icon="ic:outline-bubble-chart" className="bubble-icon" />
           <h3 className="no-selected-post-text">Reeds will open here!</h3>
         </div>
       );

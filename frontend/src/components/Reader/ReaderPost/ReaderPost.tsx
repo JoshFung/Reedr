@@ -47,13 +47,8 @@ const ReaderPost = (props: PostProps) => {
           </div>
           {url && (
             <div className="post-main-link">
-              <Icon
-                icon="mdi:link-variant"
-                width="0.75rem"
-                height="0.75rem"
-                className="post-main-link-icon"
-              />
-              ({domain})
+              <Icon icon="mdi:link-variant" className="post-main-link-icon" />(
+              {domain})
             </div>
           )}
         </div>
@@ -66,28 +61,16 @@ const ReaderPost = (props: PostProps) => {
         <div className="post-bottom-info">
           <Icon
             icon="mdi:arrow-up-bold-outline"
-            width="1rem"
-            height="1rem"
             className="post-bottom-info-icon"
           />
           {score}
         </div>
         <div className="post-bottom-info">
-          <Icon
-            icon="mdi:comment-outline"
-            width="1rem"
-            height="1rem"
-            className="post-bottom-info-icon"
-          />
+          <Icon icon="mdi:comment-outline" className="post-bottom-info-icon" />
           {descendants ?? 0}
         </div>
         <div className="post-bottom-info">
-          <Icon
-            icon="mdi:share-outline"
-            width="1rem"
-            height="1rem"
-            className="post-bottom-info-icon"
-          />
+          <Icon icon="mdi:share-outline" className="post-bottom-info-icon" />
           Share
         </div>
       </div>

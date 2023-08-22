@@ -34,8 +34,7 @@ const Header = () => {
         >
           <Icon
             icon="material-symbols:home-outline"
-            width="1rem"
-            height="1rem"
+            className="header-link-icon"
           />
           Home
         </li>
@@ -43,35 +42,35 @@ const Header = () => {
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.NEW))}
         >
-          <Icon icon="mdi:history" width="1rem" height="1rem" />
+          <Icon icon="mdi:history" className="header-link-icon" />
           New
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.BEST))}
         >
-          <Icon icon="mdi:star-outline" width="1rem" height="1rem" />
+          <Icon icon="mdi:star-outline" className="header-link-icon" />
           Best
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.ASK))}
         >
-          <Icon icon="mdi:help" width="1rem" height="1rem" />
+          <Icon icon="mdi:help" className="header-link-icon" />
           Ask
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.SHOW))}
         >
-          <Icon icon="mdi:bullhorn-outline" width="1rem" height="1rem" />
+          <Icon icon="mdi:bullhorn-outline" className="header-link-icon" />
           Show
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.JOB))}
         >
-          <Icon icon="mdi:briefcase-outline" width="1rem" height="1rem" />
+          <Icon icon="mdi:briefcase-outline" className="header-link-icon" />
           Jobs
         </li>
       </ul>
