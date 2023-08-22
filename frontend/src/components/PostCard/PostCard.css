@@ -1,5 +1,5 @@
 .postcard-container {
-  border: 1px solid black;
+  border: 1px solid #212529;
   margin: 0.75rem 0.5rem 0.75rem 0.5rem;
   padding: 0.125rem 0rem 0.125rem 0rem;
   border-radius: 5px;
@@ -7,12 +7,13 @@
   flex-direction: column;
   justify-content: space-between;
   /* x-offset | y-offset | blur radius | spread radius | colour */
-  box-shadow: -0.25rem 0.25rem 0.25rem 0rem #343a40;
+  box-shadow: -0.125rem 0.125rem 0.25rem 0rem #212529;
   background-color: #f8f9fa;
 }
 
 .postcard-container:hover {
-  box-shadow: -0.25rem 0.25rem 0.25rem 0rem #ff9500;
+  border: 1px solid #61a5c2;
+  box-shadow: -0.25rem 0.25rem 0.25rem 0rem #61a5c2;
 }
 
 .postcard-title {
