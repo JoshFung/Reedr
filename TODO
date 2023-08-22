@@ -23,6 +23,7 @@
     ☐ Add more styling -> Especially colour...
     ☐ Make sure they reflect same design
   ✔ Refactor infinite scroll to not use topContentContainer @done(23-08-21 15:56)
+  ☐ Figure out why we are getting duplicate key warnings -> For posts AND comments
 
 @low Priority:
   ☐ Improve `timeDifference` helper function

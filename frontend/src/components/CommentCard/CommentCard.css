@@ -33,7 +33,9 @@
   gap: 0.5rem;
 }
 
-.comment-text {
+.comment-text,
+pre,
+code {
   font-weight: 300;
   font-size: 0.75rem;
   text-align: left;

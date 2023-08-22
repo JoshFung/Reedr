@@ -58,7 +58,7 @@ const Feed = () => {
               message={"Loading more reeds... 🫧"}
             />
           }
-          scrollThreshold="0.2"
+          scrollThreshold="20%"
           endMessage={
             <FillerCard
               type={FillerCardEnum.BOTTOM_MESSAGE}
