@@ -14,6 +14,11 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// ping
+app.get("/ping", (req, res) => {
+  res.send("Server is running");
+});
+
 app.use("/", feedRouter);
 app.use("/item", itemRouter);
 
