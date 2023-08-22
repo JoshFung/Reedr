@@ -43,7 +43,7 @@ const ReaderPost = (props: PostProps) => {
         color: "#61A5C2",
       };
     } else {
-      copySourceText = "Copy source";
+      copySourceText = "Source";
       copySourceIcon = (
         <Icon
           icon="material-symbols:content-copy-outline"
