@@ -14,6 +14,10 @@ const app = (0, express_1.default)();
 const port = process.env.PORT || 5000;
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
+// ping
+app.get("/ping", (req, res) => {
+    res.send("Server is running");
+});
 app.use("/", feed_1.feedRouter);
 app.use("/item", item_1.itemRouter);
 // 404
