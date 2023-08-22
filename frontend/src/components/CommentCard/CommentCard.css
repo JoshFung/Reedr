@@ -19,10 +19,12 @@
   align-items: flex-start;
   white-space: normal;
   gap: 0.75rem;
+  width: 100%;
 }
 
 .comment-content {
   max-width: 100%;
+  width: 100%;
   height: auto;
   white-space: normal;
   margin: 0.5rem 0rem 0.5rem 0rem;
@@ -34,7 +36,9 @@
 
 .comment-text,
 pre,
-code {
+code,
+p,
+a {
   font-weight: 300;
   font-size: 0.75rem;
   text-align: left;
