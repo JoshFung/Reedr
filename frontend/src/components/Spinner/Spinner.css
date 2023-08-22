@@ -9,13 +9,13 @@
 }
 
 .spinner {
-  border: 1rem solid #dee2e6;
+  border: 1rem solid #2c7da0;
   border-top: 1rem solid #61a5c2;
-  background-color: #f8f9fa;
   border-radius: 50%;
   width: 6rem;
   height: 6rem;
-  animation: spin 2s linear infinite;
+  /* p1 - init accel | p2 - init y change | p3 - second point decel | p4 - second point y change  */
+  animation: spin 2s cubic-bezier(0.5, 0, 0.1, 1) infinite;
 }
 
 @keyframes spin {
