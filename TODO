@@ -7,10 +7,10 @@
   ✔ Spinner when: @done(23-08-18 16:28)
     ✔ Loading comments @done(23-08-18 16:28)
     ✔ Loading posts @done(23-08-18 16:28)
-  ☐ Mobile and web friendly -> Able to scale 
+  ✔ Mobile and web friendly -> Able to scale @done(23-08-21 22:12)
     ✔ Post cards aren't full width when screen size is larger @done(23-08-21 19:19)
     ✔ REM value should change based on screen size @done(23-08-21 19:18)
-    ☐ Better spacing when on different devices
+    ✔ Better spacing when on different devices @done(23-08-21 22:12)
   ☐ Selection of post should remain highlighted on feed
     ☐ onHover doesn't work for desktop (as planned)
 
@@ -27,6 +27,7 @@
   ✔ Refactor infinite scroll to not use topContentContainer @done(23-08-21 15:56)
   ☐ Figure out why we are getting duplicate key warnings -> For posts AND comments
   ☐ Change from React Logo in the tab to a Reedr logo
+  ☐ Better sizing for postcard info
 
 @low Priority:
   ☐ Improve `timeDifference` helper function
