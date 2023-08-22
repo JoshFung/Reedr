@@ -19,3 +19,7 @@
   background-color: #f8f9fa;
   overflow-y: auto;
 }
+
+.reader-content::-webkit-scrollbar {
+  width: 0;
+}

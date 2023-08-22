@@ -54,3 +54,5 @@ Things to consider:
     ☐ Do we need to fetch all comments at once?
       ☐ Should we rather fetch `x` amount of comments, as well as few children comments for each?
   ✔ Refactor CSS class names to not use camel case @done(23-08-21 15:58)
+  ✔ Header not exactly 10vh @done(23-08-21 22:08)
+    Temporarily solved by calc(10vh - 2px) for the 2px bottom border, likely should change to rem units
