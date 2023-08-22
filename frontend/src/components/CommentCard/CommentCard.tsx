@@ -17,7 +17,7 @@ interface CommentCardProps {
 }
 
 const CommentCard = (props: CommentCardProps) => {
-  const { by, time, text, kids } = props.comment;
+  const { by, time, text, kids, dead } = props.comment;
   const { depth } = props;
   const convertedTime = timeDifference(time, true);
   const directChildren = kids?.length ?? 0;
@@ -59,21 +59,27 @@ const CommentCard = (props: CommentCardProps) => {
         <DepthBar depth={depth} />
         <div className="comment">
           <div className="comment-content">
-            <p className="comment-text">{convertedText}</p>
-            <div className="comment-info">
-              <div className="comment-author-date">
-                By
-                <span>{` ${by} `}</span>
-                {`${convertedTime} ago`}
-              </div>
-              <div className="comment-children-info">
-                <Icon
-                  icon="mdi:comment-outline"
-                  className="comment-children-icon"
-                />
-                {directChildren}
-              </div>
-            </div>
+            {dead ? (
+              <span>{"This comment is dead or deleted :("}</span>
+            ) : (
+              <>
+                <p className="comment-text">{convertedText}</p>
+                <div className="comment-info">
+                  <div className="comment-author-date">
+                    By
+                    <span>{` ${by} `}</span>
+                    {`${convertedTime} ago`}
+                  </div>
+                  <div className="comment-children-info">
+                    <Icon
+                      icon="mdi:comment-outline"
+                      className="comment-children-icon"
+                    />
+                    {directChildren}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

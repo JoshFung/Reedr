@@ -53,7 +53,7 @@ export const fetchCommentsHelper = async (ids: number[]) => {
       ids.map(async (id: number) => {
         const response = await axios.get(`${apiUrl}/item/comment/${id}`);
         const responseData = response.data;
-        if (responseData && !responseData.dead && !responseData.deleted) {
+        if (responseData && !responseData.deleted) {
           return responseData;
         }
       })

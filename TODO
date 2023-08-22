@@ -13,6 +13,7 @@
     ✔ Better spacing when on different devices @done(23-08-21 22:12)
   ✔ Selection of post should remain highlighted on feed @done(23-08-22 00:36)
     ✔ onHover doesn't work for desktop (as planned) @done(23-08-22 00:36)
+  ✔ Dead comments should render a message if it's dead rather than nothing @done(23-08-22 01:14)
 
 @high Priority:
   ✔ How should posts display the url link? (ex. www.github.com) @done(23-08-18 16:23)
@@ -29,7 +30,7 @@
   ☐ Figure out why we are getting duplicate key warnings -> For posts AND comments
   ✔ Change from React Logo in the tab to a Reedr logo @done(23-08-21 22:33)
   ✔ Better sizing for postcard info @done(23-08-21 22:16)
-  ☐ Mouse doesn't change to pointer when hovering over clickable elements
+  ✔ Mouse doesn't change to pointer when hovering over clickable elements @done(23-08-22 00:57)
     ✔ Title @done(23-08-22 00:44)
     ✔ Postcards @done(23-08-22 00:44)
     ✔ Header links @done(23-08-22 00:44)
@@ -54,9 +55,10 @@ Bug Fixes:
     ✔ Becomes very large when fetching @done(23-08-18 16:25)
   ✘ Last comment card has `border-bottom` showing through parent container @cancelled(23-08-21 19:18)
   ✔ Icons should be sized using `rem` rather than `px` @done(23-08-18 16:57)
-  ☐ Spinner colour needs to be changed, so it works with background colours
+  ✔ Spinner colour needs to be changed, so it works with background colours @done(23-08-22 00:58)
   ✔ Comment content still expanding too far out of container @done(23-08-21 22:40)
   ✔ Comment links sometimes not being shortened @done(23-08-21 22:40)
+  ☐ Comment borders sometimes overlap and double up -> Not sure specifically when
 
 Things to consider:
   ☐ Use Firebase client library to access HN API

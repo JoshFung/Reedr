@@ -34,6 +34,13 @@
   gap: 0.5rem;
 }
 
+.comment-content > span {
+  font-style: italic;
+  font-weight: 100;
+  font-size: 0.75rem;
+  align-self: flex-start;
+}
+
 .comment-text,
 pre,
 code,
