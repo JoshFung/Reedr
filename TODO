@@ -26,7 +26,7 @@
   ☐ Update figma designs
     ☐ Add more styling -> Especially colour...
     ☐ Make sure they reflect same design
-  ☐ More interactive buttons for header -> Container it and onHover highlight?
+  ✔ More interactive buttons for header -> Container it and onHover highlight? @done(23-08-22 16:34)
   ✔ Refactor infinite scroll to not use topContentContainer @done(23-08-21 15:56)
   ✔ Figure out why we are getting duplicate key warnings -> For posts AND comments @done(23-08-22 14:43)
     Figured out due to Feed rendering twice (cause mobile-container and meb-container)
