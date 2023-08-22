@@ -11,6 +11,8 @@
     ✔ Post cards aren't full width when screen size is larger @done(23-08-21 19:19)
     ✔ REM value should change based on screen size @done(23-08-21 19:18)
     ☐ Better spacing when on different devices
+  ☐ Selection of post should remain highlighted on feed
+    ☐ onHover doesn't work for desktop (as planned)
 
 @high Priority:
   ✔ How should posts display the url link? (ex. www.github.com) @done(23-08-18 16:23)
@@ -29,9 +31,10 @@
 @low Priority:
   ☐ Improve `timeDifference` helper function
   ☐ Look to refactor CSS classes -> Potentially lots of repeated code
-  ☐ Remove excessive comments (entire project)
-  ☐ Remove unnecessary imports (entire project)
+  ✔ Remove excessive comments (entire project) @done(23-08-21 19:24)
+  ✔ Remove unnecessary imports (entire project) @done(23-08-21 19:24)
   ✔ Icons should not have inline sizing, use CSS files to size @done(23-08-21 17:36)
+  ☐ No scrollbar for reader
   
 Bug Fixes:
   ✔ Scrollbar isn't showing up in correct container for feed @done(23-08-18 16:25)

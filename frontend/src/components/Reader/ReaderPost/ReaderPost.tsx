@@ -53,9 +53,6 @@ const ReaderPost = (props: PostProps) => {
           )}
         </div>
       </div>
-      {/* they will all be styled the same so maybe make all children the same
-        class */}
-
       <hr className="post-divider" />
       <div className="post-bottom">
         <div className="post-bottom-info">

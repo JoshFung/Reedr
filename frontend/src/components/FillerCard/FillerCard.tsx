@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { BarColourEnum, FillerCardEnum } from "../../utils/enums";
+import { FillerCardEnum } from "../../utils/enums";
 import DepthBar from "../DepthBar/DepthBar";
 import "./FillerCard.css";
 

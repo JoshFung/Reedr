@@ -26,9 +26,6 @@ const ContentPage = () => {
           )}
         </div>
       </div>
-
-      {/* BEFORE TRYING TO MAKE PC FRIENDLY */}
-      {/* {selectedPost ? <Reader {...selectedPost} /> : <Feed />} */}
     </div>
   );
 };

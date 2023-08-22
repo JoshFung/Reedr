@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import "./Feed.css";
 import PostCard from "../PostCard/PostCard";
@@ -66,7 +66,6 @@ const Feed = () => {
             />
           }
           height="90vh"
-          // scrollableTarget="feedContainer" // from ContentPage -- Allows us to scroll to load more posts
           className="infinite-scroll"
         >
           {renderPostCards}
