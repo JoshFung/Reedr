@@ -40,6 +40,11 @@ const CommentCard = (props: CommentCardProps) => {
     return <CommentCard key={comment.id} comment={comment} depth={depth + 1} />;
   });
 
+  let style: React.CSSProperties = {};
+  if (showChildren) {
+    style = { cursor: "pointer" };
+  }
+
   return (
     <div className="comment-chain-container">
       <div
@@ -49,6 +54,7 @@ const CommentCard = (props: CommentCardProps) => {
             setShowChildren(!showChildren);
           }
         }}
+        style={style}
       >
         <DepthBar depth={depth} />
         <div className="comment">

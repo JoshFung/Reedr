@@ -16,15 +16,12 @@ const Header = () => {
   const readerOpen = selectedPost !== null;
 
   const handleTitleClick = () => {
-    dispatch(setNoPost());
+    readerOpen ? dispatch(setNoPost()) : window.location.reload();
   };
 
   return (
     <header className="header-container">
-      <h2
-        className="header-title"
-        onClick={readerOpen ? handleTitleClick : undefined}
-      >
+      <h2 className="header-title" onClick={handleTitleClick}>
         {selectedPost ? "Close" : "Reedr"}
       </h2>
       <ul className="header-feed-list">

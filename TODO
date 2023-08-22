@@ -29,6 +29,15 @@
   ☐ Figure out why we are getting duplicate key warnings -> For posts AND comments
   ✔ Change from React Logo in the tab to a Reedr logo @done(23-08-21 22:33)
   ✔ Better sizing for postcard info @done(23-08-21 22:16)
+  ☐ Mouse doesn't change to pointer when hovering over clickable elements
+    ✔ Title @done(23-08-22 00:44)
+    ✔ Postcards @done(23-08-22 00:44)
+    ✔ Header links @done(23-08-22 00:44)
+    ✔ Post titles -> Should open to new link @done(23-08-22 00:48)
+    ✔ Expand children comments @done(23-08-22 00:55)
+    ✔ Parent comments (to hide children comments) when expanded @done(23-08-22 00:55)
+  ☐ Share button should be changed to COPY LINK
+    ☐ When copied, change state and icon of the "COPY LINK" to "Copied" with a different icon (checkmark?)
 
 @low Priority:
   ☐ Improve `timeDifference` helper function
@@ -37,6 +46,7 @@
   ✔ Remove unnecessary imports (entire project) @done(23-08-21 19:24)
   ✔ Icons should not have inline sizing, use CSS files to size @done(23-08-21 17:36)
   ✔ No scrollbar for reader @done(23-08-21 22:17)
+  ✔ Clicking on title when no selected post should refresh page @done(23-08-22 00:43)
   
 Bug Fixes:
   ✔ Scrollbar isn't showing up in correct container for feed @done(23-08-18 16:25)
