@@ -11,6 +11,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* PHONES */
+@media screen and (max-width: 767px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+
+/* TABLETS */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+
+/* COMPUTERS */
+@media screen and (min-width: 1024px) {
+  html,
+  body {
+    font-size: 18px;
+  }
+}
+
 #root {
   height: 100%;
 }

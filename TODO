@@ -8,9 +8,9 @@
     ✔ Loading comments @done(23-08-18 16:28)
     ✔ Loading posts @done(23-08-18 16:28)
   ☐ Mobile and web friendly -> Able to scale 
-    ☐ Post cards aren't full width when screen size is larger
-    ☐ REM value should change based on screen size
-
+    ✔ Post cards aren't full width when screen size is larger @done(23-08-21 19:19)
+    ✔ REM value should change based on screen size @done(23-08-21 19:18)
+    ☐ Better spacing when on different devices
 
 @high Priority:
   ✔ How should posts display the url link? (ex. www.github.com) @done(23-08-18 16:23)
@@ -24,6 +24,7 @@
     ☐ Make sure they reflect same design
   ✔ Refactor infinite scroll to not use topContentContainer @done(23-08-21 15:56)
   ☐ Figure out why we are getting duplicate key warnings -> For posts AND comments
+  ☐ Change from React Logo in the tab to a Reedr logo
 
 @low Priority:
   ☐ Improve `timeDifference` helper function
@@ -36,7 +37,7 @@ Bug Fixes:
   ✔ Scrollbar isn't showing up in correct container for feed @done(23-08-18 16:25)
     ✔ Goes over header @done(23-08-18 16:25)
     ✔ Becomes very large when fetching @done(23-08-18 16:25)
-  ☐ Last comment card has `border-bottom` showing through parent container
+  ✘ Last comment card has `border-bottom` showing through parent container @cancelled(23-08-21 19:18)
   ✔ Icons should be sized using `rem` rather than `px` @done(23-08-18 16:57)
   ☐ Spinner colour needs to be changed, so it works with background colours
 
