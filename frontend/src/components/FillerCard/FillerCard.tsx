@@ -32,25 +32,6 @@ const FillerCard = (props: FillerCardProps) => {
         return null;
       }
 
-      const colourMapping: { [key in BarColourEnum]: string } = {
-        [BarColourEnum.RED]: "#F94144",
-        [BarColourEnum.ORANGE]: "#F8961E",
-        [BarColourEnum.YELLOW]: "#F9C74F",
-        [BarColourEnum.GREEN]: "#90BE6D",
-        [BarColourEnum.TEAL]: "#43AA8B",
-        [BarColourEnum.BLUE]: "#577590",
-      };
-
-      const colourClass: BarColourEnum = depth % 6;
-
-      const indentStyle: React.CSSProperties = {
-        paddingLeft: `${depth * 0.75}rem`,
-      };
-
-      const barColourStyle: React.CSSProperties = {
-        backgroundColor: colourMapping[colourClass],
-      };
-
       return (
         <div className="show-children-container" onClick={onClick}>
           <DepthBar depth={depth} />
