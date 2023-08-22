@@ -28,7 +28,8 @@
     ☐ Make sure they reflect same design
   ☐ More interactive buttons for header -> Container it and onHover highlight?
   ✔ Refactor infinite scroll to not use topContentContainer @done(23-08-21 15:56)
-  ☐ Figure out why we are getting duplicate key warnings -> For posts AND comments
+  ✔ Figure out why we are getting duplicate key warnings -> For posts AND comments @done(23-08-22 14:43)
+    Figured out due to Feed rendering twice (cause mobile-container and meb-container)
   ✔ Change from React Logo in the tab to a Reedr logo @done(23-08-21 22:33)
   ✔ Better sizing for postcard info @done(23-08-21 22:16)
   ✔ Mouse doesn't change to pointer when hovering over clickable elements @done(23-08-22 00:57)
@@ -53,6 +54,7 @@
   ✔ No scrollbar for reader @done(23-08-21 22:17)
   ✔ Clicking on title when no selected post should refresh page @done(23-08-22 00:43)
   ☐ Highlight OP in comments -> Same orange colour as in reader post info
+  ☐ Smaller right margin for feed when NOT on mobile
   
 Bug Fixes:
   ✔ Scrollbar isn't showing up in correct container for feed @done(23-08-18 16:25)
