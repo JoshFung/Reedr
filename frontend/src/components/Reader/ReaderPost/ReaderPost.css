@@ -106,3 +106,7 @@
 .post-bottom-info:nth-child(n + 2) {
   border-left: 0.0625rem solid #dee2e6;
 }
+
+.copied {
+  color: #61a5c2;
+}

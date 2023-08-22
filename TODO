@@ -14,6 +14,7 @@
   ✔ Selection of post should remain highlighted on feed @done(23-08-22 00:36)
     ✔ onHover doesn't work for desktop (as planned) @done(23-08-22 00:36)
   ✔ Dead comments should render a message if it's dead rather than nothing @done(23-08-22 01:14)
+  ☐ Use HTTPS so that copy link works !
 
 @high Priority:
   ✔ How should posts display the url link? (ex. www.github.com) @done(23-08-18 16:23)
@@ -37,8 +38,11 @@
     ✔ Post titles -> Should open to new link @done(23-08-22 00:48)
     ✔ Expand children comments @done(23-08-22 00:55)
     ✔ Parent comments (to hide children comments) when expanded @done(23-08-22 00:55)
-  ☐ Share button should be changed to COPY LINK
-    ☐ When copied, change state and icon of the "COPY LINK" to "Copied" with a different icon (checkmark?)
+  ✔ Share button should be changed to COPY SOURCE @done(23-08-22 01:55)
+    ✔ When copied, change state and icon of the "COPY SOURCE" to "Copied" with a different icon (checkmark?) @done(23-08-22 01:55)
+    ✔ Disable "copy source" when there's no source link @done(23-08-22 01:55)
+    ☐ Should copy source url into clipboard
+      Currently does NOT work as we are not using HTTPS
 
 @low Priority:
   ☐ Improve `timeDifference` helper function
@@ -48,6 +52,7 @@
   ✔ Icons should not have inline sizing, use CSS files to size @done(23-08-21 17:36)
   ✔ No scrollbar for reader @done(23-08-21 22:17)
   ✔ Clicking on title when no selected post should refresh page @done(23-08-22 00:43)
+  ☐ Highlight OP in comments -> Same orange colour as in reader post info
   
 Bug Fixes:
   ✔ Scrollbar isn't showing up in correct container for feed @done(23-08-18 16:25)
@@ -59,6 +64,7 @@ Bug Fixes:
   ✔ Comment content still expanding too far out of container @done(23-08-21 22:40)
   ✔ Comment links sometimes not being shortened @done(23-08-21 22:40)
   ☐ Comment borders sometimes overlap and double up -> Not sure specifically when
+  ☐ Width of feed not maximized as expected when full desktop (not in Inspect mode)
 
 Things to consider:
   ☐ Use Firebase client library to access HN API

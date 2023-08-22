@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { parseText, timeDifference } from "../../../utils/helpers";
 import "./ReaderPost.css";
 import { Icon } from "@iconify/react";
@@ -15,17 +16,41 @@ export interface PostProps {
 const ReaderPost = (props: PostProps) => {
   const { title, by, time, url, score, text, descendants } = props;
   const convertedTime = timeDifference(time, true);
+  const [copied, setCopied] = useState(false);
 
-  let domain, convertedText;
+  let domain,
+    copySourceStyle: React.CSSProperties = { cursor: "auto" };
+  let copySourceText = "No source";
+  let copySourceIcon = (
+    <Icon
+      icon="material-symbols:close-rounded"
+      className="post-bottom-info-icon"
+    />
+  );
 
   if (url) {
     // Source: https://stackoverflow.com/a/8498629/16217105
     const matches = url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
     domain = matches && matches[1];
-  }
 
-  if (text) {
-    convertedText = parseText(text);
+    copySourceStyle = {};
+    if (copied) {
+      copySourceText = "Copied!";
+      copySourceIcon = (
+        <Icon icon="ic:round-check" className="post-bottom-info-icon copied" />
+      );
+      copySourceStyle = {
+        color: "#61A5C2",
+      };
+    } else {
+      copySourceText = "Copy source";
+      copySourceIcon = (
+        <Icon
+          icon="material-symbols:content-copy-outline"
+          className="post-bottom-info-icon"
+        />
+      );
+    }
   }
 
   const openLink = (url: string | undefined) => {
@@ -38,7 +63,7 @@ const ReaderPost = (props: PostProps) => {
     <div className="post-container">
       <div className="post-main" onClick={() => openLink(url)}>
         <h2 className="post-title">{title}</h2>
-        {convertedText && <p className="post-text">{convertedText}</p>}
+        {text && <p className="post-text">{parseText(text)}</p>}
         <div className="post-main-info-container">
           <div className="post-main-info">
             By
@@ -66,9 +91,25 @@ const ReaderPost = (props: PostProps) => {
           <Icon icon="mdi:comment-outline" className="post-bottom-info-icon" />
           {descendants ?? 0}
         </div>
-        <div className="post-bottom-info">
-          <Icon icon="mdi:share-outline" className="post-bottom-info-icon" />
-          Share
+        <div
+          className="post-bottom-info"
+          onClick={
+            url
+              ? () => {
+                  // TODO: Need to use HTTPS for this to work !
+                  // navigator.clipboard.writeText(url);
+                  setCopied(true);
+                }
+              : undefined
+          }
+          style={copySourceStyle}
+        >
+          {/* <Icon
+            icon="material-symbols:content-copy-outline"
+            className="post-bottom-info-icon"
+          /> */}
+          {copySourceIcon}
+          {copySourceText}
         </div>
       </div>
     </div>
