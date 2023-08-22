@@ -27,7 +27,7 @@
   ✔ Refactor infinite scroll to not use topContentContainer @done(23-08-21 15:56)
   ☐ Figure out why we are getting duplicate key warnings -> For posts AND comments
   ☐ Change from React Logo in the tab to a Reedr logo
-  ☐ Better sizing for postcard info
+  ✔ Better sizing for postcard info @done(23-08-21 22:16)
 
 @low Priority:
   ☐ Improve `timeDifference` helper function
