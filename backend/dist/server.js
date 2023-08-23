@@ -18,7 +18,7 @@ app.use(express_1.default.json());
 app.get("/ping", (req, res) => {
     res.send("Server is running");
 });
-app.use("/", feed_1.feedRouter);
+app.use("/feed", feed_1.feedRouter);
 app.use("/item", item_1.itemRouter);
 // 404
 app.use("*", (req, res) => {

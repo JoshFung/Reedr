@@ -19,7 +19,7 @@ app.get("/ping", (req, res) => {
   res.send("Server is running");
 });
 
-app.use("/", feedRouter);
+app.use("/feed", feedRouter);
 app.use("/item", itemRouter);
 
 // 404

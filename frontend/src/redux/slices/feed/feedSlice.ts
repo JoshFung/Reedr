@@ -33,7 +33,7 @@ export const fetchPostsIds = createAsyncThunk<
   const state = getState();
   const { feedMode } = state.feed;
   try {
-    const response = await axios.get(`${apiUrl}/${feedMode}Ids`);
+    const response = await axios.get(`${apiUrl}/feed/${feedMode}Ids`);
     return response.data;
   } catch {
     throw Error("Error fetching post IDs");

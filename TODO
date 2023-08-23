@@ -82,3 +82,4 @@ Things to consider:
     Temporarily solved by calc(10vh - 2px) for the 2px bottom border, likely should change to rem units
   ☐ Dark mode?
     ☐ Normalize colours into CSS variables?
+  ☐ 404 page?
