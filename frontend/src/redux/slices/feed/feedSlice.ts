@@ -41,7 +41,7 @@ export const fetchPostsIds = createAsyncThunk<
 });
 
 export const fetchPosts = createAsyncThunk<Post[], void, { state: RootState }>(
-  "feed/fetchFiftyPosts",
+  "feed/fetchTwentyFivePosts",
   async (_, { getState, dispatch }) => {
     const apiUrl = process.env.REACT_APP_API_URL;
     const state = getState();
@@ -49,7 +49,7 @@ export const fetchPosts = createAsyncThunk<Post[], void, { state: RootState }>(
     if (maxFeedSize < postsIds.length) {
       try {
         const response = await Promise.all(
-          postsIds.slice(maxFeedSize, maxFeedSize + 50).map((id) => {
+          postsIds.slice(maxFeedSize, maxFeedSize + 25).map((id) => {
             return axios.get(`${apiUrl}/item/post/${id}`);
           })
         );
@@ -76,12 +76,12 @@ const feedSlice = createSlice({
         state.idStatus = StatusEnum.IDLE;
         state.postStatus = StatusEnum.IDLE;
 
-        // reset to only having 50 posts if we change
+        // reset to only having 0 posts if we change
         state.maxFeedSize = 0;
       }
     },
     incrementMaxFeedSize: (state) => {
-      state.maxFeedSize += 50;
+      state.maxFeedSize += 25;
     },
   },
   extraReducers: (builder) => {

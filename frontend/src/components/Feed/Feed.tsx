@@ -45,7 +45,7 @@ const Feed = () => {
   return (
     <div className="feed-container">
       {postIdsStatus !== StatusEnum.SUCCEEDED ||
-      (postsStatus !== StatusEnum.SUCCEEDED && postsArray.length < 50) ? (
+      (postsStatus !== StatusEnum.SUCCEEDED && postsArray.length < 25) ? (
         <Spinner />
       ) : (
         <InfiniteScroll
