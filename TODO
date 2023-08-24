@@ -65,8 +65,9 @@ Bug Fixes:
   ✔ Spinner colour needs to be changed, so it works with background colours @done(23-08-22 00:58)
   ✔ Comment content still expanding too far out of container @done(23-08-21 22:40)
   ✔ Comment links sometimes not being shortened @done(23-08-21 22:40)
-  ☐ Comment borders sometimes overlap and double up -> Not sure specifically when
+  ✔ Comment borders sometimes overlap and double up -> Children comment containers each have a border leading to stacking @done(23-08-23 19:09)
   ☐ Width of feed not maximized as expected when full desktop (not in Inspect mode)
+    Seems to be the infinite-scroll component itself's outer div
 
 Things to consider:
   ✘ Use Firebase client library to access HN API @cancelled(23-08-23 17:33)

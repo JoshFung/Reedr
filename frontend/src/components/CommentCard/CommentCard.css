@@ -89,7 +89,6 @@ a {
 .comment-children-container {
   display: flex;
   flex-direction: column;
-  border-bottom: 0.0625rem solid #dee2e6;
 }
 
 .comment-children {
