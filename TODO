@@ -69,7 +69,10 @@ Bug Fixes:
   ☐ Width of feed not maximized as expected when full desktop (not in Inspect mode)
 
 Things to consider:
-  ☐ Use Firebase client library to access HN API
+  ✘ Use Firebase client library to access HN API @cancelled(23-08-23 17:33)
+    Not worth to do so -> The HN API itself does not offer realtime, furthermore, cannot access all their data at once
+      Requires us to fetch each post and comment individually still and store into own database 
+      
   ☐ Write tests
   ✔ Delete `commentsSlice.ts` if not needed @done(23-08-18 19:35)
   ☐ See if we can improve rendering time
