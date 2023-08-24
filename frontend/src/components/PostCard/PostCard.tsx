@@ -50,7 +50,7 @@ const PostCard = (props: Post) => {
         </div>
         <div className="postcard-info-piece">
           <Icon icon="mdi:account-outline" className="postcard-info-icon" />
-          {by}
+          <span>{by}</span>
         </div>
       </div>
     </div>

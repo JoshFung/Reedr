@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header className="header-container">
       <h2 className="header-title" onClick={handleTitleClick}>
-        {selectedPost ? "Close" : "Reedr"}
+        {selectedPost ? "Close" : "reedr"}
       </h2>
       <ul className="header-feed-list">
         <li
@@ -33,42 +33,44 @@ const Header = () => {
             icon="material-symbols:home-outline"
             className="header-link-icon"
           />
-          Home
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.NEW))}
         >
           <Icon icon="mdi:history" className="header-link-icon" />
-          New
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.BEST))}
         >
           <Icon icon="mdi:star-outline" className="header-link-icon" />
-          Best
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.ASK))}
         >
-          <Icon icon="mdi:help" className="header-link-icon" />
-          Ask
+          {/* <Icon
+            icon="fluent:chat-bubbles-question-28-regular"
+            className="header-link-icon"
+          /> */}
+          <Icon
+            icon="fluent:chat-bubbles-question-24-regular"
+            className="header-link-icon"
+          />
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.SHOW))}
         >
-          <Icon icon="mdi:bullhorn-outline" className="header-link-icon" />
-          Show
+          {/* <Icon icon="mdi:bullhorn-outline" className="header-link-icon" /> */}
+          <Icon icon="mdi:human-male-board" className="header-link-icon" />
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.JOB))}
         >
           <Icon icon="mdi:briefcase-outline" className="header-link-icon" />
-          Jobs
         </li>
       </ul>
     </header>

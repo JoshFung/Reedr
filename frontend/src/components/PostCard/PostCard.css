@@ -1,5 +1,6 @@
 .postcard-container {
-  border: 1px solid #212529;
+  /* border: 1px solid #212529; */
+  border: 1px solid #adb5bd;
   margin: 0.75rem 0.5rem 0.75rem 0.5rem;
   padding: 0.125rem 0rem 0.125rem 0rem;
   border-radius: 5px;
@@ -7,7 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   /* x-offset | y-offset | blur radius | spread radius | colour */
-  box-shadow: -0.125rem 0.125rem 0.25rem 0rem #212529;
+  /* box-shadow: -0.125rem 0.125rem 0.25rem 0rem #212529; */
   background-color: #f8f9fa;
   cursor: pointer;
 }
@@ -51,4 +52,8 @@
   color: #adb5bd;
   width: 0.75rem;
   height: 0.75rem;
+}
+
+.postcard-info-piece > span {
+  color: #ff7b00;
 }
