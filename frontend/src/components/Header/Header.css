@@ -6,14 +6,12 @@
   width: calc(100vw - 1rem);
   height: calc(10vh - 2px); /* -2 px for the border */
   padding: 0 0.5rem 0 0.5rem;
-  border-bottom: 2px solid #ced4da;
   position: sticky;
   top: 0;
-  background-color: #f8f9fa;
 }
 
 .header-title {
-  margin: 0 2rem 0 0;
+  margin: 0 2rem 0 0.5rem;
   font-weight: 900;
   font-size: 2.75rem;
   cursor: pointer;
@@ -31,9 +29,9 @@
   margin-block: 0 0;
   margin-inline: 0 0;
   gap: 0.5rem;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   /* background-color: #dee2e6; */
-  border-radius: 10px;
+  /* border-radius: 10px; */
   /* box-shadow: inset 0 0 4px 2px hsla(0, 0%, 0%, 0.2); */
 }
 
@@ -55,7 +53,7 @@
   padding: 0.35rem;
   border-radius: 5px;
   /* background-color: #014f86; */
-  color: black;
+  /* color: black; */
   /* color: #f8f9fa; */
   /* box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.2); */
 }
@@ -67,30 +65,43 @@
   height: 100%;
 }
 
-@media screen and (max-width: 767px) {
+@media (prefers-color-scheme: light) {
+  .header-container {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #ced4da;
+  }
+  .header-link {
+    color: #212529;
+  }
   .header-link:active {
-    /* Using this as it's easier to tell when pressed rather than shadow */
     box-shadow: inset 0 0 4px 2px #a9d6e5df;
     -webkit-tap-highlight-color: transparent;
   }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .header-link:active {
-    /* Using this as it's easier to tell when pressed rather than shadow */
-    box-shadow: inset 0 0 4px 2px #a9d6e5df;
-    -webkit-tap-highlight-color: transparent;
-  }
-}
-
-@media screen and (min-width: 768px) {
   .header-link:hover {
-    /* box-shadow: inset 0 0 4px 2px #a9d6e5df; */
     background-color: #a9d6e5;
-    /* color:  */
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .header-container {
+    background-color: #212529;
+    border-bottom: 2px solid #adb5bd;
+  }
+  .header-link {
+    color: #f8f9fa;
   }
   .header-link:active {
-    /* box-shadow: inset 0 0 4px 2px #ffaa00df; */
+    box-shadow: inset 0 0 4px 2px #2a6f97;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .header-link:hover {
+    background-color: #014f86;
+  }
+}
+
+/* Common for Medium to Large Screens */
+@media screen and (min-width: 768px) {
+  .header-link:active {
     box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
     -webkit-tap-highlight-color: transparent;
   }

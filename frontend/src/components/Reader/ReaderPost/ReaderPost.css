@@ -1,6 +1,5 @@
 .post-container {
   padding: 0.75rem 0.75rem 0.75rem 0.75rem;
-  box-shadow: 0 1px 3px hsla(210, 11%, 15%, 1);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -19,7 +18,6 @@
   text-align: left;
   margin: 0rem 0rem 0rem 0rem;
   hyphens: auto;
-  color: #343a40;
 }
 
 .post-text {
@@ -42,25 +40,18 @@
 .post-main-info {
   font-size: 0.75rem;
   font-weight: 400;
-  color: #adb5bd;
-}
-
-.post-main-info-author {
-  color: #ff7b00;
 }
 
 .post-main-link {
   font-size: 0.75rem;
   font-weight: 200;
   font-style: italic;
-  color: #61a5c2;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 .post-main-link-icon {
-  color: #a9d6e5;
   width: 1rem;
   height: 1rem;
 }
@@ -109,4 +100,56 @@
 
 .copied {
   color: #61a5c2;
+}
+
+@media (prefers-color-scheme: light) {
+  .post-container {
+    box-shadow: 0 1px 3px hsla(210, 11%, 15%, 1);
+  }
+
+  .post-title {
+    color: #343a40;
+  }
+
+  .post-main-info {
+    color: #adb5bd;
+  }
+
+  .post-main-info-author {
+    color: #ff7b00;
+  }
+
+  .post-main-link {
+    color: #61a5c2;
+  }
+
+  .post-main-link-info {
+    color: #a9d6e5;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-container {
+    background-color: #212529;
+    border-bottom: 1px solid hsla(210, 14%, 89%, 1);
+  }
+
+  .post-title {
+    color: #e9ecef;
+  }
+  .post-main-info {
+    color: #adb5bd;
+  }
+
+  .post-main-info-author {
+    color: #ffa200;
+  }
+
+  .post-main-link {
+    color: #a9d6e5;
+  }
+
+  .post-main-link-info {
+    color: #a9d6e5;
+  }
 }

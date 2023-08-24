@@ -1,17 +1,5 @@
 /* BOTTOM MESSAGE */
 
-.bottom-message-container {
-  /* background: rgb(248, 249, 250); */
-  background: linear-gradient(
-    180deg,
-    rgba(248, 249, 250, 1) 0%,
-    rgba(169, 214, 229, 1) 25%,
-    rgba(70, 143, 175, 1) 50%,
-    rgba(1, 73, 124, 1) 75%,
-    rgba(1, 42, 74, 1) 100%
-  );
-}
-
 .bottom-message-text {
   margin-block-start: 0;
   margin-block-end: 0;
@@ -34,7 +22,6 @@
   margin: 0 0 0 0;
   font-size: 1.5rem;
   font-weight: 400;
-  color: #014f86;
 }
 
 /* SHOW CHILDREN BUTTON */
@@ -60,7 +47,6 @@
 .no-selected-post-container {
   height: 100%;
   width: 100%;
-  background-color: #ced4da;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,7 +54,6 @@
 }
 
 .bubble-icon {
-  color: #6c757d;
   height: 6rem;
   width: 6rem;
 }
@@ -76,6 +61,63 @@
 .no-selected-post-text {
   font-weight: 800;
   font-size: 2rem;
-  color: #6c757d;
   margin: 0 0 0 0;
+}
+
+@media (prefers-color-scheme: light) {
+  .bottom-message-container {
+    background: rgb(248, 249, 250);
+    background: linear-gradient(
+      180deg,
+      rgba(248, 249, 250, 1) 0%,
+      rgba(169, 214, 229, 1) 25%,
+      rgba(70, 143, 175, 1) 50%,
+      rgba(1, 73, 124, 1) 75%,
+      rgba(1, 42, 74, 1) 100%
+    );
+  }
+
+  .no-selected-post-container {
+    background-color: #dee2e6;
+  }
+
+  .bubble-icon,
+  .no-selected-post-text {
+    color: #6c757d;
+  }
+
+  .no-comments-text {
+    color: #014f86;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .bottom-message-container {
+    background: rgb(52, 58, 64);
+    background: linear-gradient(
+      180deg,
+      rgba(52, 58, 64, 1) 0%,
+      rgba(70, 143, 175, 1) 25%,
+      rgba(70, 143, 175, 1) 50%,
+      rgba(1, 73, 124, 1) 75%,
+      rgba(1, 42, 74, 1) 100%
+    );
+  }
+
+  .no-selected-post-container {
+    background-color: #343a40;
+  }
+
+  .bubble-icon,
+  .no-selected-post-text {
+    color: #adb5bd;
+  }
+
+  .no-comments-container {
+    background-color: #212529;
+  }
+
+  .no-comments-text {
+    color: #468faf;
+  }
 }

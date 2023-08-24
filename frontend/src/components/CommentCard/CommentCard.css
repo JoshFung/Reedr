@@ -64,11 +64,6 @@ a {
 .comment-author-date {
   font-weight: 400;
   font-size: 0.65rem;
-  color: #adb5bd;
-}
-
-.comment-author-date span {
-  color: #468faf;
 }
 
 .comment-children-info {
@@ -81,7 +76,6 @@ a {
 }
 
 .comment-children-icon {
-  color: #adb5bd;
   width: 0.5rem;
   height: 0.5rem;
 }
@@ -95,4 +89,38 @@ a {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  .comment-author-date {
+    color: #adb5bd;
+  }
+
+  .comment-author-date span {
+    color: #468faf;
+  }
+  .comment-children-icon {
+    color: #adb5bd;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .comment-chain-container {
+    background-color: #212529;
+  }
+  .comment-author-date {
+    color: #adb5bd;
+  }
+
+  .comment-author-date span {
+    color: #89c2d9;
+  }
+
+  .comment-children-icon {
+    color: #adb5bd;
+  }
+
+  a {
+    color: #a9d6e5;
+  }
 }

@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <header className="header-container">
       <h2 className="header-title" onClick={handleTitleClick}>
-        {selectedPost ? "Close" : "reedr"}
+        {selectedPost ? "close" : "reedr"}
       </h2>
       <ul className="header-feed-list">
         <li
