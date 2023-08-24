@@ -4,7 +4,6 @@
 }
 
 .comment-container {
-  border-bottom: 0.0625rem solid #dee2e6;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -27,7 +26,7 @@
   width: 100%;
   height: auto;
   white-space: normal;
-  margin: 0.5rem 0rem 0.5rem 0rem;
+  margin: 0.75rem 0rem 0.75rem 0rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -92,6 +91,9 @@ a {
 }
 
 @media (prefers-color-scheme: light) {
+  .comment-container {
+    border-bottom: 0.0625rem solid #ced4da;
+  }
   .comment-author-date {
     color: #adb5bd;
   }
@@ -105,6 +107,9 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
+  .comment-container {
+    border-bottom: 0.0625rem solid #6c757d;
+  }
   .comment-chain-container {
     background-color: #212529;
   }

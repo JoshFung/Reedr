@@ -17,10 +17,20 @@ const PostCard = (props: Post) => {
   let selectedStyle: React.CSSProperties = {};
 
   if (selectedPost && selectedPost.id === id) {
-    selectedStyle = {
-      border: "2px solid #ff9500",
-      boxShadow: "-0.25rem 0.25rem 0.25rem 0rem #ff9500",
-    };
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: light)").matches
+    ) {
+      selectedStyle = {
+        // border: "2px solid #2c7da0",
+        boxShadow: "0 0 0.25rem 0.0625rem #2a6f97",
+      };
+    } else {
+      selectedStyle = {
+        border: "2px solid #2c7da0",
+        boxShadow: "0 0 0.25rem 0.0625rem #2A6F97",
+      };
+    }
   }
 
   return (

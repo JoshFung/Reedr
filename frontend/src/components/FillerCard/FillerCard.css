@@ -31,10 +31,9 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+  padding: 0.35rem 0.75rem 0.35rem 0.75rem;
   flex: 1;
   cursor: pointer;
-  border-bottom: 0.0625rem solid #dee2e6;
 }
 
 .show-children-text {
@@ -77,6 +76,10 @@
     );
   }
 
+  .show-children-container {
+    border-bottom: 0.0625rem solid #ced4da;
+  }
+
   .no-selected-post-container {
     background-color: #dee2e6;
   }
@@ -102,6 +105,10 @@
       rgba(1, 73, 124, 1) 75%,
       rgba(1, 42, 74, 1) 100%
     );
+  }
+
+  .show-children-container {
+    border-bottom: 0.0625rem solid #6c757d;
   }
 
   .no-selected-post-container {
