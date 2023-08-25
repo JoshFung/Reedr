@@ -29,8 +29,8 @@
   }
 }
 
-/* FOR TABLETS AND BIGGER */
-@media screen and (min-width: 768px) {
+/* FOR TABLETS */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .web-container {
     display: flex;
     flex-direction: row;
@@ -38,10 +38,38 @@
   }
 
   .feed-column {
+    flex: 1;
+  }
+
+  .reader-column {
     flex: 2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .web-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .feed-column {
+    flex: 1;
   }
 
   .reader-column {
     flex: 3;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .content-container {
+    background-color: #dee2e6;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .content-container {
+    background-color: #343a40;
   }
 }

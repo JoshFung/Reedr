@@ -18,9 +18,10 @@
   display: flex;
   align-items: center;
   font-size: 0.75rem;
-  font-weight: 700;
   word-wrap: break-word;
   text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.0125rem;
 }
 
 .postcard-info-container {
@@ -67,12 +68,16 @@
 @media (prefers-color-scheme: dark) {
   .postcard-container {
     background-color: #212529;
-    border: 1px solid #ced4da;
+    border: 1px solid #6c757d;
   }
 
   .postcard-container:hover {
     border: 1px solid #ffaa00;
     box-shadow: 0 0 0.25rem 0.125rem #ffaa00;
+  }
+
+  .postcard-title {
+    color: #e9ecef;
   }
 
   .postcard-info-piece > span {
