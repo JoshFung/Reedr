@@ -10,6 +10,9 @@ COPY ["package.json", "package-lock.json*", "./"]
 # Install all dependencies
 RUN npm install
 
+# Set the environment variables 
+ENV REACT_APP_API_URL=http://host.docker.internal:8000
+
 # Copy source code into our container (which has now installed our dependencies)
 COPY . .
 
@@ -24,9 +27,6 @@ ENV NODE_ENV=production
 
 # Copy the built code from the build stage
 COPY --from=build /app/build /usr/share/nginx/html
-
-# Set the environment variables 
-ENV REACT_APP_API_URL=http://host.docker.internal:8000
 
 # Start the application
 CMD ["nginx", "-g", "daemon off;"]
