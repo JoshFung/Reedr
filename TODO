@@ -15,6 +15,11 @@
     ✔ onHover doesn't work for desktop (as planned) @done(23-08-22 00:36)
   ✔ Dead comments should render a message if it's dead rather than nothing @done(23-08-22 01:14)
   ☐ Use HTTPS so that copy link works !
+  ✔ Dockerize! @done(23-08-25 23:20)
+    ✔ Dockerfile for frontend @done(23-08-25 23:20)
+    ✔ Dockerfile for backend @done(23-08-25 23:20)
+    ✔ compose.yaml for entire project @done(23-08-25 23:20)
+  ☐ Host on cloud
 
 @high Priority:
   ✔ How should posts display the url link? (ex. www.github.com) @done(23-08-18 16:23)
@@ -66,7 +71,7 @@ Bug Fixes:
   ✔ Comment content still expanding too far out of container @done(23-08-21 22:40)
   ✔ Comment links sometimes not being shortened @done(23-08-21 22:40)
   ✔ Comment borders sometimes overlap and double up -> Children comment containers each have a border leading to stacking @done(23-08-23 19:09)
-  ☐ Width of feed not maximized as expected when full desktop (not in Inspect mode)
+  ✔ Width of feed not maximized as expected when full desktop (not in Inspect mode) @done(23-08-25 23:20)
     Seems to be the infinite-scroll component itself's outer div
 
 Things to consider:
@@ -84,6 +89,6 @@ Things to consider:
   ✔ Refactor CSS class names to not use camel case @done(23-08-21 15:58)
   ✔ Header not exactly 10vh @done(23-08-21 22:08)
     Temporarily solved by calc(10vh - 2px) for the 2px bottom border, likely should change to rem units
-  ☐ Dark mode?
-    ☐ Normalize colours into CSS variables?
+  ✔ Dark mode? @done(23-08-25 23:20)
+    ✘ Normalize colours into CSS variables? @cancelled(23-08-25 23:20)
   ☐ 404 page?

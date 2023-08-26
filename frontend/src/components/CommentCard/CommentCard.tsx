@@ -34,7 +34,7 @@ const CommentCard = (props: CommentCardProps) => {
         setChildrenComments(childrenComments);
       });
     }
-  }, [showChildren]);
+  }, [kids, showChildren]);
 
   const loadCommentCards = childrenComments.map((comment) => {
     return <CommentCard key={comment.id} comment={comment} depth={depth + 1} />;

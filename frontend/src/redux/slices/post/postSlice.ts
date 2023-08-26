@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../store";
 import { StatusEnum } from "../../../utils/enums";
-import axios from "axios";
 import { fetchCommentsHelper } from "../../../utils/helpers";
 
 export interface Post {

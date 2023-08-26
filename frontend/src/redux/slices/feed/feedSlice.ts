@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Post } from "../post/postSlice";
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import { RootState } from "../../store";
 import { FeedModeEnum, StatusEnum } from "../../../utils/enums";
 

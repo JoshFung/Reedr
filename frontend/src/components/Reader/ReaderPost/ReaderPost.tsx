@@ -30,7 +30,7 @@ const ReaderPost = (props: PostProps) => {
 
   if (url) {
     // Source: https://stackoverflow.com/a/8498629/16217105
-    const matches = url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i);
+    const matches = url.match(/^https?\:\/\/([^\/?#]+)(?:[\/?#]|$)/i); // eslint-disable-line
     domain = matches && matches[1];
 
     copySourceStyle = {};
