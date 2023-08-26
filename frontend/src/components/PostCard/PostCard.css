@@ -35,8 +35,8 @@
 
 .postcard-info-piece {
   display: flex;
-  /* Not huge fan of but looks better than 0.5rem and 0.75rem */
-  font-size: 0.65rem;
+  /* Not huge fan of but works better than other options */
+  font-size: 0.6rem;
   font-weight: 300;
   flex-direction: row;
   align-items: center;

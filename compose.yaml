@@ -10,7 +10,7 @@ services:
       - "8000:3000"
 
   frontend:
-    image: joshfung/reedr-frontend:v1.0.1
+    image: joshfung/reedr-frontend:v1.0.2
     build:
       context: ./frontend
       dockerfile: Dockerfile
