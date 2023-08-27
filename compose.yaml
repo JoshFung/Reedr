@@ -1,24 +1,24 @@
 services:
   backend:
+    environment:
+      - PORT=3000
     image: joshfung/reedr-backend:v1.0.0
     build:
       context: ./backend
       dockerfile: Dockerfile
       args:
-        - VERSION: ${BACKEND_VERSION}
-    environment:
-      - PORT=3000
+        - VERSION=${BACKEND_VERSION}
     ports:
       - "8000:3000"
 
   frontend:
+    environment:
+      - REACT_APP_API_URL=http://host.docker.internal:8000
     image: joshfung/reedr-frontend:v1.0.3
     build:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        - VERSION: ${FRONTEND_VERSION}
-    environment:
-      - REACT_APP_API_URL=http://host.docker.internal:8000
+        - VERSION=${FRONTEND_VERSION}
     ports:
       - "8001:80"
