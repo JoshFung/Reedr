@@ -10,7 +10,7 @@ env:
   FRONTEND_VERSION: "v0.1.0"
 
 jobs:
-  build-and-push:
+  build-images:
     runs-on: ubuntu-latest
     steps:
       - name: checkout-code
@@ -22,7 +22,18 @@ jobs:
       - name: build-frontend
         run: docker compose -f ${{ github.workspace }}/compose.yaml build --build-arg FRONTEND_VERSION=$FRONTEND_VERSION frontend
 
-      # - name: configure-aws
+  push-images:
+    runs-on: ubuntu-latest
+    needs: build-images
+    permissions:
+      id-token: write
+    steps:
+      - name: configure-aws
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          audience: sts.amazonaws.com
+          aws-region: ca-central-1
+          role-to-assume: arn:aws:iam::307349992383:role/Github_OIDC_IdP_Workflow_Tokens
 
       # - name: push-backend
 
