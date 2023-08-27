@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  BACKEND_VERSION: "v0.1.0"
-  FRONTEND_VERSION: "v0.1.0"
+  BACKEND_VERSION: "v1.0.0"
+  FRONTEND_VERSION: "v1.0.3"
 
 jobs:
   build-and-push-images:
@@ -42,7 +42,7 @@ jobs:
           docker tag reedr-backend:latest $REGISTRY/reedr-backend:$BACKEND_VERSION
           docker tag reedr-frontend:latest $REGISTRY/reedr-frontend:$FRONTEND_VERSION
 
-      - name: Push Backend Image to ECR
+      - name: Push Images to ECR
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         run: |
