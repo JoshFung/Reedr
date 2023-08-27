@@ -35,10 +35,16 @@ jobs:
         with:
           mask-password: "true"
 
+      - name: Tag Images
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        run: |
+          docker tag reedr-backend:latest $REGISTRY/reedr-backend:$BACKEND_VERSION
+          docker tag reedr-frontend:latest $REGISTRY/reedr-frontend:$FRONTEND_VERSION
+
       - name: Push Backend Image to ECR
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: reedr-backend
         run: |
           docker push $REGISTRY/reedr-backend:$BACKEND_VERSION
           docker push $REGISTRY/reedr-frontend:$FRONTEND_VERSION
