@@ -17,10 +17,10 @@ jobs:
         uses: actions/checkout@v3
 
       - name: build-backend
-        run: docker compose -f ${{ github.workspace }}/compose.yaml build --build-arg VERSION=$BACKEND_VERSION backend
+        run: docker compose -f ${{ github.workspace }}/compose.yaml build --build-arg BACKEND_VERSION=$BACKEND_VERSION backend
 
       - name: build-frontend
-        run: docker compose -f ${{ github.workspace }}/compose.yaml build --build-arg VERSION=$FRONTEND_VERSION frontend
+        run: docker compose -f ${{ github.workspace }}/compose.yaml build --build-arg FRONTEND_VERSION=$FRONTEND_VERSION frontend
 
       # - name: configure-aws
 
