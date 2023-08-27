@@ -4,6 +4,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      args:
+        - VERSION: ${BACKEND_VERSION}
     environment:
       - PORT=3000
     ports:
@@ -14,6 +16,8 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        - VERSION: ${FRONTEND_VERSION}
     environment:
       - REACT_APP_API_URL=http://host.docker.internal:8000
     ports:

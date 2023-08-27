@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  BACKEND_VERSION: v0.1.0
+  FRONTEND_VERSION: v0.1.0
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-code
+        uses: actions/checkout@v3
+
+      - name: build-backend
+        run: docker compose -f ${{ github.workspace }}/compose.yaml build --build-arg VERSION=$BACKEND_VERSION backend
+
+      - name: build-frontend
+        run: docker compose -f ${{ github.workspace }}/compose.yaml build --build-arg VERSION=$FRONTEND_VERSION frontend
+
+      # - name: configure-aws
+
+      # - name: push-backend
+
+      # - name: push-frontend
