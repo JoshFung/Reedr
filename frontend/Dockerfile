@@ -11,7 +11,7 @@ COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install
 
 # Set the environment variables 
-ENV REACT_APP_API_URL=http://host.docker.internal:8000
+ENV REACT_APP_API_URL=https://host.docker.internal:8000
 
 # Copy source code into our container (which has now installed our dependencies)
 COPY . .
