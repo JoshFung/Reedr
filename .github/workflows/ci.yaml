@@ -26,7 +26,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v3
         with:
           audience: sts.amazonaws.com
-          aws-region: ca-central-1
+          aws-region: us-west-2
           role-to-assume: arn:aws:iam::307349992383:role/Github_OIDC_IdP_Workflow_Tokens
 
       - name: Login to Amazon ECR
