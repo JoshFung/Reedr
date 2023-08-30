@@ -31,4 +31,4 @@ jobs:
       - name: Update App Runner Service
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        run: aws apprunner update-service --service-arn ${{ secrets.FRONTEND_APP_RUNNER_ARN }} --source-configuration ImageRepository=imageUri=$REGISTRY/reedr-frontend:$FRONTEND_VERSION
+        run: aws apprunner update-service --service-arn ${{ secrets.FRONTEND_APP_RUNNER_ARN }} --source-configuration ImageRepository=$REGISTRY/reedr-frontend:$FRONTEND_VERSION
