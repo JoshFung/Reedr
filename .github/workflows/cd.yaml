@@ -1,0 +1,20 @@
+name: CD
+
+on:
+  workflow_dispatch:
+    inputs:
+      push-backend:
+        description: "Push backend image to backend app runner"
+        required: false
+        default: false
+      push-frontend:
+        description: "Push frontend image to frontend app runner"
+        required: false
+        default: false
+
+jobs:
+  configure-aws:
+
+  push-backend:
+
+  push-frontend:

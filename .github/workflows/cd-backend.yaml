@@ -1,0 +1,34 @@
+name: CD-Backend
+
+on: workflow_dispatch
+
+env:
+  BACKEND_VERSION: "v2.0.1"
+
+jobs:
+  push-backend:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          audience: sts.amazonaws.com
+          aws-region: us-west-2
+          role-to-assume: arn:aws:iam::307349992383:role/Github_OIDC_IdP_Workflow_Tokens
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+        with:
+          mask-password: "true"
+
+      - Update App Runner Service
+        env:
+            REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        run: aws apprunner update-service --service-name reedr-backend --source-configuration imageRepository=imageUri=$REGISTRY/reedr-backend:$BACKEND_VERSION
