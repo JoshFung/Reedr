@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  BACKEND_VERSION: "v2.0.1"
+  BACKEND_VERSION: "v2.0.2"
   FRONTEND_VERSION: "v2.0.1"
   API_URL: "https://reedrapi.joshfung.dev"
 
