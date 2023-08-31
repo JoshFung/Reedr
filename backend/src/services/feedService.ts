@@ -1,10 +1,12 @@
 import axios, { AxiosResponse } from "axios";
 
 export const fetchTopStories = () => {
+  console.log("SERVICE: FETCHING TOP STORIES");
   return axios
     .get("https://hacker-news.firebaseio.com/v0/topstories.json")
     .then((response: AxiosResponse) => {
       // console.log("feedService - Fetch Top Stories");
+      console.log("SERVICE: RETRIEVED TOP STORIES AND RETURNING TO CONTROLLER");
       return response.data;
     })
     .catch((error) => {

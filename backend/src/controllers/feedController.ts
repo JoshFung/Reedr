@@ -10,10 +10,15 @@ import {
 
 export default class FeedController {
   getTop500Ids = (req: Request, res: Response) => {
+    console.log("CONTROLLER: GET TOP 500 IDS");
     fetchTopStories()
       .then((data) => {
         // console.log("FeedController - Get 500 Top Ids");
+        console.log(
+          "CONTROLLER: RETRIEVED TOP STORIES FROM SERVICE AND RETURNING TO ROUTER"
+        );
         res.status(200).send(data);
+        console.log("CONTROLLER: RESPONSE STATUS SHOULD BE 200 AND GOOD");
       })
       .catch((error) => {
         res.status(500).send(error);
