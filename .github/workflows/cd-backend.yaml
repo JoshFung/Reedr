@@ -3,7 +3,7 @@ name: CD-Backend
 on: workflow_dispatch
 
 env:
-  BACKEND_VERSION: "v2.0.2"
+  BACKEND_VERSION: "v2.0.3"
 
 jobs:
   push-backend:

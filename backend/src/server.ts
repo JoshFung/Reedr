@@ -16,6 +16,7 @@ app.use(express.json());
 
 // ping
 app.get("/ping", (req, res) => {
+  console.log("SERVER: Ping received, server is running!");
   res.send("Server is running");
 });
 
