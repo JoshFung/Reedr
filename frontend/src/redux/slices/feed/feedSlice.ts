@@ -48,6 +48,12 @@ export const fetchPosts = createAsyncThunk<Post[], void, { state: RootState }>(
     const { postsIds, maxFeedSize } = state.feed;
     if (maxFeedSize < postsIds.length) {
       try {
+        console.log(
+          await axios
+            .get(`${apiUrl}/ping`)
+            .then((res) => res.data)
+            .catch((err) => console.log(err))
+        );
         const response = await Promise.all(
           postsIds.slice(maxFeedSize, maxFeedSize + 25).map((id) => {
             return axios.get(`${apiUrl}/item/post/${id}`);
