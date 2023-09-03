@@ -14,12 +14,13 @@
   ✔ Selection of post should remain highlighted on feed @done(23-08-22 00:36)
     ✔ onHover doesn't work for desktop (as planned) @done(23-08-22 00:36)
   ✔ Dead comments should render a message if it's dead rather than nothing @done(23-08-22 01:14)
-  ☐ Use HTTPS so that copy link works !
+  ✔ Use HTTPS so that copy link works ! @done(23-09-02 22:55)
   ✔ Dockerize! @done(23-08-25 23:20)
     ✔ Dockerfile for frontend @done(23-08-25 23:20)
     ✔ Dockerfile for backend @done(23-08-25 23:20)
     ✔ compose.yaml for entire project @done(23-08-25 23:20)
-  ☐ Host on cloud
+  ✔ Host on cloud @done(23-09-02 22:55)
+  ☐ Use ALB to send client requests back to frontend (before it is sent to backend)
 
 @high Priority:
   ✔ How should posts display the url link? (ex. www.github.com) @done(23-08-18 16:23)
@@ -47,7 +48,7 @@
   ✔ Share button should be changed to COPY SOURCE @done(23-08-22 01:55)
     ✔ When copied, change state and icon of the "COPY SOURCE" to "Copied" with a different icon (checkmark?) @done(23-08-22 01:55)
     ✔ Disable "copy source" when there's no source link @done(23-08-22 01:55)
-    ☐ Should copy source url into clipboard
+    ✔ Should copy source url into clipboard @done(23-09-02 22:53)
       Currently does NOT work as we are not using HTTPS
 
 @low Priority:
@@ -60,6 +61,8 @@
   ✔ Clicking on title when no selected post should refresh page @done(23-08-22 00:43)
   ✔ Highlight OP in comments -> Same orange colour as in reader post info @done(23-08-23 22:57)
   ✔ Smaller right margin for feed when NOT on mobile @done(23-08-23 22:57)
+  ☐ Update README
+    ☐ Mention that Copy source only works on HTTPS
   
 Bug Fixes:
   ✔ Scrollbar isn't showing up in correct container for feed @done(23-08-18 16:25)

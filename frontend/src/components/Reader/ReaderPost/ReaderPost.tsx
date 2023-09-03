@@ -96,18 +96,13 @@ const ReaderPost = (props: PostProps) => {
           onClick={
             url
               ? () => {
-                  // TODO: Need to use HTTPS for this to work !
-                  // navigator.clipboard.writeText(url);
+                  navigator.clipboard.writeText(url);
                   setCopied(true);
                 }
               : undefined
           }
           style={copySourceStyle}
         >
-          {/* <Icon
-            icon="material-symbols:content-copy-outline"
-            className="post-bottom-info-icon"
-          /> */}
           {copySourceIcon}
           {copySourceText}
         </div>

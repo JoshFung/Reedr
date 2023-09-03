@@ -9,6 +9,7 @@ FROM node:18-alpine AS build
 WORKDIR /app
 
 # Copy package.json and package-lock.json to /app before `npm install`
+# TODO: Do I really need "./"? 
 COPY ["package.json", "package-lock.json*", "./"]
 
 # Install all dependencies
