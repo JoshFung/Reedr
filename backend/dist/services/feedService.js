@@ -6,10 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchJobStories = exports.fetchShowStories = exports.fetchAskStories = exports.fetchBestStories = exports.fetchNewStories = exports.fetchTopStories = void 0;
 const axios_1 = __importDefault(require("axios"));
 const fetchTopStories = () => {
+    console.log("SERVICE: FETCHING TOP STORIES");
     return axios_1.default
         .get("https://hacker-news.firebaseio.com/v0/topstories.json")
         .then((response) => {
         // console.log("feedService - Fetch Top Stories");
+        console.log("SERVICE: RETRIEVED TOP STORIES AND RETURNING TO CONTROLLER");
         return response.data;
     })
         .catch((error) => {

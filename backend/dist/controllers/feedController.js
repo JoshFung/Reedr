@@ -4,10 +4,13 @@ const feedService_1 = require("../services/feedService");
 class FeedController {
     constructor() {
         this.getTop500Ids = (req, res) => {
+            console.log("CONTROLLER: GET TOP 500 IDS");
             (0, feedService_1.fetchTopStories)()
                 .then((data) => {
                 // console.log("FeedController - Get 500 Top Ids");
+                console.log("CONTROLLER: RETRIEVED TOP STORIES FROM SERVICE AND RETURNING TO ROUTER");
                 res.status(200).send(data);
+                console.log("CONTROLLER: RESPONSE STATUS SHOULD BE 200 AND GOOD");
             })
                 .catch((error) => {
                 res.status(500).send(error);

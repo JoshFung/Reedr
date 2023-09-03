@@ -16,6 +16,7 @@ app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 // ping
 app.get("/ping", (req, res) => {
+    console.log("SERVER: Ping received, server is running!");
     res.send("Server is running");
 });
 app.use("/feed", feed_1.feedRouter);

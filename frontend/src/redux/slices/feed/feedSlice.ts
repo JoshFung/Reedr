@@ -35,12 +35,6 @@ export const fetchPostsIds = createAsyncThunk<
   try {
     console.log(
       await axios
-        .get("https://catfact.ninja/fact")
-        .then((res) => res.data)
-        .catch((err) => console.log(err))
-    );
-    console.log(
-      await axios
         .get(`${apiUrl}/ping`)
         .then((res) => res.data)
         .catch((err) => console.log(err))

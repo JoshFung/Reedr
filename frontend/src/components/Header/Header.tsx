@@ -33,44 +33,45 @@ const Header = () => {
             icon="material-symbols:home-outline"
             className="header-link-icon"
           />
+          <h6 className="header-link-text">Home</h6>
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.NEW))}
         >
           <Icon icon="mdi:history" className="header-link-icon" />
+          <h6 className="header-link-text">New</h6>
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.BEST))}
         >
           <Icon icon="mdi:star-outline" className="header-link-icon" />
+          <h6 className="header-link-text">Best</h6>
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.ASK))}
         >
-          {/* <Icon
-            icon="fluent:chat-bubbles-question-28-regular"
-            className="header-link-icon"
-          /> */}
           <Icon
             icon="fluent:chat-bubbles-question-24-regular"
             className="header-link-icon"
           />
+          <h6 className="header-link-text">Ask</h6>
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.SHOW))}
         >
-          {/* <Icon icon="mdi:bullhorn-outline" className="header-link-icon" /> */}
           <Icon icon="mdi:human-male-board" className="header-link-icon" />
+          <h6 className="header-link-text">Show</h6>
         </li>
         <li
           className="header-link"
           onClick={() => dispatch(setFeedMode(FeedModeEnum.JOB))}
         >
           <Icon icon="mdi:briefcase-outline" className="header-link-icon" />
+          <h6 className="header-link-text">Job</h6>
         </li>
       </ul>
     </header>
