@@ -10,7 +10,7 @@ COPY ["package.json", "package-lock.json*", "./"]
 # Install all dependencies
 RUN npm install
 
-# Retrive ARG from compose.yaml
+# Use ARG in build stage
 ARG API_URL
 
 # Set the environment variables 

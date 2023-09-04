@@ -3,7 +3,7 @@ name: CD-Frontend
 on: workflow_dispatch
 
 env:
-  FRONTEND_VERSION: "v2.0.5"
+  FRONTEND_VERSION: "v2.0.6"
 
 jobs:
   push-frontend:
