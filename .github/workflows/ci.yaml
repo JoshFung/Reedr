@@ -6,8 +6,8 @@ on:
       - main
 
 env:
-  BACKEND_VERSION: "v2.0.3"
-  FRONTEND_VERSION: "v2.0.6"
+  BACKEND_VERSION: "v3.0.0"
+  FRONTEND_VERSION: "v3.0.0"
   API_URL: "https://reedrapi.joshfung.dev"
 
 jobs:

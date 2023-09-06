@@ -16,8 +16,7 @@
         <li><a href="#running-reedr-locally">Running Reedr Locally</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#whats-next">What's Next?</a></li>
   </ol>
 <!-- </details> -->
 
@@ -25,7 +24,7 @@
 
 Reedr is an alternative reader for Hacker News that is designed to be used on mobile, tablets as well as laptops / desktops.
 
-Specifically designed for quick reading, it does not make use of giving points, posting or replying. However, you can make use of Hacker News' numerous feeds as well as easily view comments in a cascading view.
+Specifically designed for quick reading, it makes use of a side feed and reader view to allow users to quickly browse through articles. Furthermore, cascading comments allow readers to skip over filler comments and dive deeper into insightful discussion.
 
 <p align="right">(<a href="#table-of-contents">Back to Table of Contents</a>)</p>
 
@@ -41,6 +40,14 @@ Specifically designed for quick reading, it does not make use of giving points, 
 - [![Docker][Docker]][Docker-url]
 - [![AWS-ECR][AWS-ECR]][AWS-ECR-url]
 - [![AWS-App-Runner][AWS-App-Runner]][AWS-App-Runner-url]
+
+Frontend built using Typescript, React and Redux.
+
+Backend built using Typescript, Express and Axios.
+
+CI/CD pipeline built using Github Actions.
+
+Deployed using Docker, AWS Elastic Container Registry (ECR) and AWS App Runner.
 
 <p align="right">(<a href="#table-of-contents">Back to Table of Contents</a>)</p>
 
@@ -70,6 +77,24 @@ docker compose up -d
 ```sh
 docker compose down
 ```
+
+<p align="right">(<a href="#table-of-contents">Back to Table of Contents</a>)</p>
+
+## What's Next?
+
+The following are extra features I have considered implementing next:
+
+- [ ] Lockdown the backend
+  - Rather than leaving it publicly accessible, I would like to make it such that only the frontend can access the backend (opted to skip for now as there is no sensitive data nor authentication)
+  - [ ] Make use of VPCs and Security Groups to restrict access to the backend
+  - [ ] Reverse proxy so client goes through frontend to access backend
+- [ ] Improve styling
+  - More nitpicking that anything, but I would like to improve the styling of the app
+  - [ ] Comments that make use of markdown COULD be styled better to show it's markdown
+  - [ ] Links within a comment should be aggregated somewhere in the comment for easier access and organization
+  - [ ] Clean up CSS 😔
+- [ ] Improve fetching / render times
+  - Currently, the app fetches each story and comment individually (due to Hacker News' current API design) -- Could investigate more into this
 
 <p align="right">(<a href="#table-of-contents">Back to Table of Contents</a>)</p>
 

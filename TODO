@@ -21,6 +21,7 @@
     ✔ compose.yaml for entire project @done(23-08-25 23:20)
   ✔ Host on cloud @done(23-09-02 22:55)
   ☐ Use ALB to send client requests back to frontend (before it is sent to backend)
+    ☐ OR(?) Reverse proxy such that client requests are sent to frontend, and then backend
 
 @high Priority:
   ✔ How should posts display the url link? (ex. www.github.com) @done(23-08-18 16:23)
@@ -29,9 +30,9 @@
   ✔ Install Inter font (not from google fonts) -> More updated with italics @done(23-08-18 16:26)
   ☐ Show markdown within comments
   ☐ Links within a comment should also appear as boxes that open to the link at the bottom of the comment
-  ☐ Update figma designs
-    ☐ Add more styling -> Especially colour...
-    ☐ Make sure they reflect same design
+  ✔ Update figma designs @done(23-09-06 15:49)
+    ✔ Add more styling -> Especially colour... @done(23-09-06 15:49)
+    ✔ Make sure they reflect same design @done(23-09-06 15:49)
   ✔ More interactive buttons for header -> Container it and onHover highlight? @done(23-08-22 16:34)
   ✔ Refactor infinite scroll to not use topContentContainer @done(23-08-21 15:56)
   ✔ Figure out why we are getting duplicate key warnings -> For posts AND comments @done(23-08-22 14:43)
@@ -61,8 +62,8 @@
   ✔ Clicking on title when no selected post should refresh page @done(23-08-22 00:43)
   ✔ Highlight OP in comments -> Same orange colour as in reader post info @done(23-08-23 22:57)
   ✔ Smaller right margin for feed when NOT on mobile @done(23-08-23 22:57)
-  ☐ Update README
-    ☐ Mention that Copy source only works on HTTPS
+  ✔ Update README @done(23-09-06 15:50)
+    ✘ Mention that Copy source only works on HTTPS @cancelled(23-09-06 15:50)
   
 Bug Fixes:
   ✔ Scrollbar isn't showing up in correct container for feed @done(23-08-18 16:25)
