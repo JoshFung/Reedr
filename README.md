@@ -1,3 +1,4 @@
+<a name="readme-top"></a>
 ![Title Mockup](public/Title%20Mockup.png)
 
 ![Extra Mockup](public/Extra%20Mockup.png)
@@ -31,7 +32,7 @@ Reedr is an alternative reader for Hacker News that is designed to be used on mo
 
 Specifically designed for quick reading, it does not make use of giving points, posting or replying. However, you can make use of Hacker News' numerous feeds as well as easily view comments in a cascading view.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 ## Built With
 
@@ -46,7 +47,7 @@ Specifically designed for quick reading, it does not make use of giving points, 
 - [![AWS-ECR][AWS-ECR]][AWS-ECR-url]
 - [![AWS-App-Runner][AWS-App-Runner]][AWS-App-Runner-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
