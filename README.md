@@ -12,8 +12,8 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#accessing-reedr">Accessing Reedr</a></li>
+        <li><a href="#running-reedr-locally">Running Reedr Locally</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -41,6 +41,35 @@ Specifically designed for quick reading, it does not make use of giving points, 
 - [![Docker][Docker]][Docker-url]
 - [![AWS-ECR][AWS-ECR]][AWS-ECR-url]
 - [![AWS-App-Runner][AWS-App-Runner]][AWS-App-Runner-url]
+
+<p align="right">(<a href="#table-of-contents">Back to Table of Contents</a>)</p>
+
+## Getting Started
+
+### Accessing Reedr
+
+You can directly access Reedr through the following link: [reedr.joshfung.dev](https://reedr.joshfung.dev)
+
+### Running Reedr Locally (with Docker)
+
+1. Make sure you have Docker installed
+2. Open a terminal in the root directory and run the following command to build the images:
+
+```sh
+docker compose -f ./compose.yaml build --build-arg API_URL="http://host.docker.internal:8000"
+```
+
+3. In the same terminal, after the prior command is done running, run the following command to start the containers:
+
+```sh
+docker compose up -d
+```
+
+4. To stop the containers when you're done, you can run the following in the terminal:
+
+```sh
+docker compose down
+```
 
 <p align="right">(<a href="#table-of-contents">Back to Table of Contents</a>)</p>
 
