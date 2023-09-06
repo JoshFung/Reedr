@@ -35,6 +35,15 @@ body {
   }
 }
 
+/* TODO: add size in between */
+
+@media screen and (min-width: 2560px) {
+  html,
+  body {
+    font-size: 36px;
+  }
+}
+
 #root {
   height: 100%;
 }
