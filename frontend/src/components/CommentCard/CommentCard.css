@@ -99,10 +99,14 @@ a {
   }
 
   .comment-author-date span {
-    color: #468faf;
+    color: #61a5c2;
   }
   .comment-children-icon {
     color: #adb5bd;
+  }
+
+  a {
+    color: #2a6f97;
   }
 }
 
@@ -118,7 +122,7 @@ a {
   }
 
   .comment-author-date span {
-    color: #89c2d9;
+    color: #61a5c2;
   }
 
   .comment-children-icon {
