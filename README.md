@@ -1,4 +1,3 @@
-<a name="readme-top"></a>
 ![Title Mockup](public/Title%20Mockup.png)
 
 ![Extra Mockup](public/Extra%20Mockup.png)
@@ -8,12 +7,8 @@
 <!-- <details> -->
   <!-- <summary>Table of Contents</summary> -->
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
+    <li><a href="#what-is-reedr">What is Reedr?</a></li>
+    <li><a href="#built-with">Built With</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -32,7 +27,7 @@ Reedr is an alternative reader for Hacker News that is designed to be used on mo
 
 Specifically designed for quick reading, it does not make use of giving points, posting or replying. However, you can make use of Hacker News' numerous feeds as well as easily view comments in a cascading view.
 
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
+<p align="right">(<a href="#table-of-contents">Back to Table of Contents</a>)</p>
 
 ## Built With
 
@@ -47,7 +42,7 @@ Specifically designed for quick reading, it does not make use of giving points, 
 - [![AWS-ECR][AWS-ECR]][AWS-ECR-url]
 - [![AWS-App-Runner][AWS-App-Runner]][AWS-App-Runner-url]
 
-<p align="right">(<a href="#readme-top">Back to Top</a>)</p>
+<p align="right">(<a href="#table-of-contents">Back to Table of Contents</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
