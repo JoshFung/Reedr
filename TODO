@@ -20,8 +20,9 @@
     ✔ Dockerfile for backend @done(23-08-25 23:20)
     ✔ compose.yaml for entire project @done(23-08-25 23:20)
   ✔ Host on cloud @done(23-09-02 22:55)
-  ☐ Use ALB to send client requests back to frontend (before it is sent to backend)
-    ☐ OR(?) Reverse proxy such that client requests are sent to frontend, and then backend
+  ✘ Use ALB to send client requests back to frontend (before it is sent to backend) @cancelled(23-12-24 22:52)
+    ✘ OR(?) Reverse proxy such that client requests are sent to frontend, and then backend @cancelled(23-12-24 22:52)
+  ☐ Darken the post list on left when reading a post on desktop
 
 @high Priority:
   ✔ How should posts display the url link? (ex. www.github.com) @done(23-08-18 16:23)
@@ -53,7 +54,7 @@
   ✔ Hover on header links should show text for what it is @done(23-09-03 16:41)
 
 @low Priority:
-  ☐ Improve `timeDifference` helper function
+  ✘ Improve `timeDifference` helper function @cancelled(23-12-24 22:52)
   ☐ Look to refactor CSS classes -> Potentially lots of repeated code
   ✔ Remove excessive comments (entire project) @done(23-08-21 19:24)
   ✔ Remove unnecessary imports (entire project) @done(23-08-21 19:24)
